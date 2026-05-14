@@ -1,0 +1,24 @@
+#ref https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#create-env-file-manually
+# conda env create -f .devcontainer/conda_pyspark_environment.yml
+
+name: pysnowpark
+channels:
+  - https://repo.anaconda.com/pkgs/snowflake
+  - defaults
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.8
+  - pyarrow==8.0.0
+  - snowflake-snowpark-python
+  - pandas
+  - numpy
+  - streamlit
+  - jupyterlab
+  - matplotlib
+  - ipykernel
+  - ipywidgets
+  - pip
+  # - pip:
+    # - snowflake-cli-labs
+    # - streamlit
