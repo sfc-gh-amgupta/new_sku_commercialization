@@ -3,7 +3,7 @@ import "./globals.css";
 import LayoutShell from "@/components/LayoutShell";
 
 export const metadata: Metadata = {
-  title: "Colgate - SKU Launch Analytics",
+  title: "SKU Launch Analytics",
   description: "12-week post-launch performance dashboard powered by Snowflake Cortex",
 };
 

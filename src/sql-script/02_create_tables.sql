@@ -1,4 +1,4 @@
--- Colgate v2 Product Launch Demo - Create Tables
+-- CPG Brand Product Launch Demo - Create Tables
 -- All 19 DIM and RAW tables across 4 schemas
 
 USE DATABASE SKU_LAUNCH;

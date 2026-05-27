@@ -1,4 +1,4 @@
--- Colgate v2 Product Launch Demo - Prerequisites Check
+-- CPG Brand Product Launch Demo - Prerequisites Check
 -- Run this script to verify your account has the required features
 
 -- Check Cortex AI availability

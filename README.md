@@ -1,4 +1,4 @@
-# New SKU Commercialization - Colgate v2 Product Launch Demo
+# New SKU Commercialization - CPG Brand Product Launch Demo
 
 A complete Snowflake-native solution for monitoring new product (SKU) launches across sales performance, inventory health, distribution logistics, and consumer sentiment. Powered by Cortex AI, Cortex Search, Semantic Views, Dynamic Tables, and a React dashboard deployed on Snowpark Container Services (SPCS).
 
@@ -45,7 +45,7 @@ A complete Snowflake-native solution for monitoring new product (SKU) launches a
 ## Quick Start with CoCo
 
 1. Clone this repo and connect CoCo to your Snowflake account
-2. Tell CoCo: *"Deploy the Colgate v2 demo using the scripts in src/sql-script/"*
+2. Tell CoCo: *"Deploy the CPG Brand demo using the scripts in src/sql-script/"*
 3. Or follow the step-by-step below
 
 ## Step-by-Step Deployment
@@ -113,15 +113,15 @@ snow sql -q "SHOW IMAGE REPOSITORIES IN SCHEMA SKU_LAUNCH.INVENTORY"
 snow spcs image-registry login
 
 # Build and push
-docker build --platform linux/amd64 -t <registry_url>/colgate-launch-react:latest .
-docker push <registry_url>/colgate-launch-react:latest
+docker build --platform linux/amd64 -t <registry_url>/sku-launch-dashboard:latest .
+docker push <registry_url>/sku-launch-dashboard:latest
 
 # Update SNOWFLAKE_ACCOUNT in 09_deploy_spcs.sql, then run it
 ```
 
 ### Step 11: Verify
 ```sql
-SHOW ENDPOINTS IN SERVICE SKU_LAUNCH.INVENTORY.COLGATE_LAUNCH_DASHBOARD;
+SHOW ENDPOINTS IN SERVICE SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD;
 ```
 Visit the endpoint URL to see the dashboard.
 

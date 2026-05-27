@@ -1,11 +1,11 @@
 ---
-name: deploy_colgate_v2_product_launch
-description: "Deploy the Colgate v2 New SKU Commercialization demo to a Snowflake account. Creates database, tables, Dynamic Tables, Cortex Search, Semantic Views, Cortex Agent, and SPCS React dashboard. Use when: deploy colgate, setup product launch demo, install sku launch, deploy colgate v2. Triggers: colgate, product launch, sku launch, new sku commercialization, colgate v2."
+name: deploy_sku_launch_product_launch
+description: "Deploy the CPG Brand New SKU Commercialization demo to a Snowflake account. Creates database, tables, Dynamic Tables, Cortex Search, Semantic Views, Cortex Agent, and SPCS React dashboard. Use when: deploy sku launch, setup product launch demo, install sku launch, deploy cpg brand. Triggers: product launch, sku launch, new sku commercialization, cpg brand."
 ---
 
-# Deploy Colgate v2 Product Launch Demo
+# Deploy CPG Brand Product Launch Demo
 
-Fully automated deployment of the Colgate v2 New SKU Commercialization demo. Uses git-based data loading via EXECUTE IMMEDIATE and Docker build from source for the SPCS React dashboard.
+Fully automated deployment of the CPG Brand New SKU Commercialization demo. Uses git-based data loading via EXECUTE IMMEDIATE and Docker build from source for the SPCS React dashboard.
 
 **Source repo**: `https://github.com/sfc-gh-amgupta/new_sku_commercialization`
 
@@ -24,11 +24,11 @@ Before ANY deployment, present this inventory to the user so they know what will
 | Cortex Search | PRODUCT_LAUNCH_FEEDBACK_SEARCH (345 docs) | 1 |
 | Semantic Views | SV_INVENTORY, SV_SKU_SALES, SV_DISTRIBUTION, SV_CONSUMER_INSIGHTS | 4 |
 | Cortex Agent | PRODUCT_LAUNCH_AGENT (5 tools) | 1 |
-| SPCS Service | COLGATE_LAUNCH_DASHBOARD (Next.js React app) | 1 |
-| Compute Pool | COLGATE_REACT_POOL (CPU_X64_XS) | 1 |
+| SPCS Service | SKU_LAUNCH_DASHBOARD (Next.js React app) | 1 |
+| Compute Pool | SKU_LAUNCH_POOL (CPU_X64_XS) | 1 |
 | Image Repository | IMAGE_REPO | 1 |
-| Network Rule | COLGATE_EGRESS_RULE | 1 |
-| External Access Integration | COLGATE_DASHBOARD_EAI | 1 |
+| Network Rule | SKU_LAUNCH_EGRESS_RULE | 1 |
+| External Access Integration | SKU_LAUNCH_EAI | 1 |
 | Stages | RAW_FILES (x4), RAW_AUDIO, APP_SPECS | 6 |
 | Audio Files | MP3 call recordings | 205 |
 | **Total objects** | | **~52** |
@@ -85,9 +85,9 @@ ALTER ACCOUNT SET CORTEX_ENABLED_CROSS_REGION = 'ANY_REGION';
 If yes, run cleanup:
 ```sql
 USE ROLE ACCOUNTADMIN;
-DROP SERVICE IF EXISTS SKU_LAUNCH.INVENTORY.COLGATE_LAUNCH_DASHBOARD;
-DROP COMPUTE POOL IF EXISTS COLGATE_REACT_POOL;
-DROP EXTERNAL ACCESS INTEGRATION IF EXISTS COLGATE_DASHBOARD_EAI;
+DROP SERVICE IF EXISTS SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD;
+DROP COMPUTE POOL IF EXISTS SKU_LAUNCH_POOL;
+DROP EXTERNAL ACCESS INTEGRATION IF EXISTS SKU_LAUNCH_EAI;
 DROP AGENT IF EXISTS SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT;
 DROP DATABASE IF EXISTS SKU_LAUNCH;
 DROP WAREHOUSE IF EXISTS AICOLLEGE;
@@ -100,27 +100,27 @@ USE ROLE ACCOUNTADMIN;
 ```
 
 ```sql
-CREATE OR REPLACE API INTEGRATION COLGATE_GIT_INTEGRATION
+CREATE OR REPLACE API INTEGRATION SKU_LAUNCH_GIT_INTEGRATION
     API_PROVIDER = GIT_HTTPS_API
     API_ALLOWED_PREFIXES = ('https://github.com/sfc-gh-amgupta/')
     ENABLED = TRUE
-    COMMENT = 'Integration for Colgate v2 Product Launch repository';
+    COMMENT = 'Integration for CPG Brand Product Launch repository';
 ```
 
 ```sql
-CREATE DATABASE IF NOT EXISTS SKU_LAUNCH COMMENT = 'New SKU Commercialization - Colgate v2 Product Launch Demo';
+CREATE DATABASE IF NOT EXISTS SKU_LAUNCH COMMENT = 'New SKU Commercialization - CPG Brand Product Launch Demo';
 CREATE SCHEMA IF NOT EXISTS SKU_LAUNCH.INVENTORY;
 ```
 
 ```sql
-CREATE OR REPLACE GIT REPOSITORY SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT
-    API_INTEGRATION = COLGATE_GIT_INTEGRATION
+CREATE OR REPLACE GIT REPOSITORY SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT
+    API_INTEGRATION = SKU_LAUNCH_GIT_INTEGRATION
     ORIGIN = 'https://github.com/sfc-gh-amgupta/new_sku_commercialization.git'
-    COMMENT = 'Colgate v2 Product Launch source code and data';
+    COMMENT = 'CPG Brand Product Launch source code and data';
 ```
 
 ```sql
-ALTER GIT REPOSITORY SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT FETCH;
+ALTER GIT REPOSITORY SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT FETCH;
 ```
 
 ## Step 4: Run SQL Scripts (01-07) via EXECUTE IMMEDIATE
@@ -128,39 +128,39 @@ ALTER GIT REPOSITORY SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT FETCH;
 Run each script from the git repository. **Wait for each to complete before proceeding.**
 
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/01_setup_infra.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/01_setup_infra.sql;
 ```
 
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/02_create_tables.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/02_create_tables.sql;
 ```
 
 **IMPORTANT**: Before running 03_load_data.sql, the data must be staged. The load script references data from the git stage directly:
 
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/03_load_data.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/03_load_data.sql;
 ```
 
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/04_create_dynamic_tables.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/04_create_dynamic_tables.sql;
 ```
 
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/05_create_views.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/05_create_views.sql;
 ```
 
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/06_create_cortex_search.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/06_create_cortex_search.sql;
 ```
 
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/07_create_semantic_views.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/07_create_semantic_views.sql;
 ```
 
 ## Step 5: Create Agent
 
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/08_create_agent.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/08_create_agent.sql;
 ```
 
 If DDL fails (some accounts may not support CREATE AGENT), instruct the user to create the agent manually via Snowflake Intelligence UI with:
@@ -180,11 +180,11 @@ If DDL fails (some accounts may not support CREATE AGENT), instruct the user to 
 
 Clone repo and build:
 ```bash
-git clone https://github.com/sfc-gh-amgupta/new_sku_commercialization.git /tmp/colgate_v2_deploy
+git clone https://github.com/sfc-gh-amgupta/new_sku_commercialization.git /tmp/sku_launch_deploy
 ```
 
 ```bash
-docker build --platform linux/amd64 -t colgate-launch-react:latest /tmp/colgate_v2_deploy/src/react-dashboard
+docker build --platform linux/amd64 -t sku-launch-dashboard:latest /tmp/sku_launch_deploy/src/react-dashboard
 ```
 
 Login to Snowflake image registry (uses active `snow` connection — no Docker Hub login needed):
@@ -199,8 +199,8 @@ snow spcs image-repository url SKU_LAUNCH.INVENTORY.IMAGE_REPO
 
 Use the returned URL to tag and push:
 ```bash
-docker tag colgate-launch-react:latest <REPO_URL>/colgate-launch-react:latest
-docker push <REPO_URL>/colgate-launch-react:latest
+docker tag sku-launch-dashboard:latest <REPO_URL>/sku-launch-dashboard:latest
+docker push <REPO_URL>/sku-launch-dashboard:latest
 ```
 
 Replace `<REPO_URL>` with the actual URL from the previous command. This takes 2-5 minutes.
@@ -220,7 +220,7 @@ SELECT CURRENT_ACCOUNT_NAME() || '-' || CURRENT_ORGANIZATION_NAME() AS account_l
 
 Also update the network rule to use the target account's host:
 ```sql
-CREATE OR REPLACE NETWORK RULE SKU_LAUNCH.INVENTORY.COLGATE_EGRESS_RULE
+CREATE OR REPLACE NETWORK RULE SKU_LAUNCH.INVENTORY.SKU_LAUNCH_EGRESS_RULE
   MODE = EGRESS
   TYPE = HOST_PORT
   VALUE_LIST = ('<account_locator>.snowflakecomputing.com:443');
@@ -228,12 +228,12 @@ CREATE OR REPLACE NETWORK RULE SKU_LAUNCH.INVENTORY.COLGATE_EGRESS_RULE
 
 Then deploy:
 ```sql
-EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/src/sql-script/09_deploy_spcs.sql;
+EXECUTE IMMEDIATE FROM @SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/src/sql-script/09_deploy_spcs.sql;
 ```
 
 Wait for SPCS service:
 ```sql
-SELECT SYSTEM$GET_SERVICE_STATUS('SKU_LAUNCH.INVENTORY.COLGATE_LAUNCH_DASHBOARD');
+SELECT SYSTEM$GET_SERVICE_STATUS('SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD');
 ```
 If PENDING, wait 30s and retry up to 10 times.
 
@@ -269,7 +269,7 @@ SHOW SEMANTIC VIEWS IN DATABASE SKU_LAUNCH;
 ```
 
 ```sql
-SHOW ENDPOINTS IN SERVICE SKU_LAUNCH.INVENTORY.COLGATE_LAUNCH_DASHBOARD;
+SHOW ENDPOINTS IN SERVICE SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD;
 -- Expected: 1 endpoint (app, port 3000, public)
 ```
 
@@ -324,7 +324,7 @@ After all tests pass, present the following to the user as the final deployment 
 **IMPORTANT**: Always query the database for the latest URLs — NEVER cache or hardcode them.
 
 ```sql
-SHOW ENDPOINTS IN SERVICE SKU_LAUNCH.INVENTORY.COLGATE_LAUNCH_DASHBOARD;
+SHOW ENDPOINTS IN SERVICE SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD;
 ```
 Capture the `ingress_url` — this is the **Product Launch Dashboard URL**.
 
@@ -373,15 +373,15 @@ SELECT SNOWFLAKE.CORTEX.DATA_AGENT_RUN(
 | **Cortex Search** | PRODUCT_LAUNCH_FEEDBACK_SEARCH | AI & ML > Cortex Search |
 | **Semantic Views** | SV_INVENTORY, SV_SKU_SALES, SV_DISTRIBUTION, SV_CONSUMER_INSIGHTS | Each schema's Semantic Views tab |
 | **Cortex Agent** | PRODUCT_LAUNCH_AGENT (5 tools) | AI & ML > Agents (or Snowflake Intelligence) |
-| **SPCS Service** | COLGATE_LAUNCH_DASHBOARD (React/Next.js) | Compute > Services |
-| **Compute Pool** | COLGATE_REACT_POOL (CPU_X64_XS) | Compute > Compute Pools |
+| **SPCS Service** | SKU_LAUNCH_DASHBOARD (React/Next.js) | Compute > Services |
+| **Compute Pool** | SKU_LAUNCH_POOL (CPU_X64_XS) | Compute > Compute Pools |
 | **Warehouse** | AICOLLEGE (MEDIUM) | Warehouses |
 
 #### Monitoring
 
 - **Dynamic Table refresh**: Snowsight > Dynamic Tables — check refresh history (1-hour lag)
 - **Cortex Search index**: `SHOW CORTEX SEARCH SERVICES IN DATABASE SKU_LAUNCH;` — check indexing_state = ACTIVE
-- **SPCS Service health**: `SELECT SYSTEM$GET_SERVICE_STATUS('SKU_LAUNCH.INVENTORY.COLGATE_LAUNCH_DASHBOARD');`
+- **SPCS Service health**: `SELECT SYSTEM$GET_SERVICE_STATUS('SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD');`
 - **Audio stage**: `LIST @SKU_LAUNCH.CONSUMER_INSIGHTS.RAW_AUDIO;` — 205 MP3 files
 
 ---
@@ -402,11 +402,11 @@ SELECT SNOWFLAKE.CORTEX.DATA_AGENT_RUN(
 
 **snow spcs image-registry login fails**: Ensure `snow` CLI is configured with an active connection. Run `snow connection test` to verify.
 
-**SPCS service stuck in PENDING**: Check `DESCRIBE COMPUTE POOL COLGATE_REACT_POOL`. If SUSPENDED, run `ALTER COMPUTE POOL COLGATE_REACT_POOL RESUME`.
+**SPCS service stuck in PENDING**: Check `DESCRIBE COMPUTE POOL SKU_LAUNCH_POOL`. If SUSPENDED, run `ALTER COMPUTE POOL SKU_LAUNCH_POOL RESUME`.
 
-**EXECUTE IMMEDIATE fails**: Fetch git repo first: `ALTER GIT REPOSITORY SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT FETCH;`
+**EXECUTE IMMEDIATE fails**: Fetch git repo first: `ALTER GIT REPOSITORY SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT FETCH;`
 
-**COPY INTO fails with "file not found"**: Ensure the git repository has been fetched. Files are referenced from `@SKU_LAUNCH.INVENTORY.COLGATE_V2_GIT/branches/main/data/...`
+**COPY INTO fails with "file not found"**: Ensure the git repository has been fetched. Files are referenced from `@SKU_LAUNCH.INVENTORY.SKU_LAUNCH_GIT/branches/main/data/...`
 
 **Cortex Search not starting**: Uses INCREMENTAL refresh and may take 2-5 minutes to build initial index. Check `indexing_state` via `SHOW CORTEX SEARCH SERVICES`.
 
@@ -418,7 +418,7 @@ SELECT SNOWFLAKE.CORTEX.DATA_AGENT_RUN(
 
 **Agent invocation fails with "Unknown function"**: Use `SNOWFLAKE.CORTEX.DATA_AGENT_RUN('<fqn>', $${ ... }$$)` — not `SNOWFLAKE.CORTEX.AGENT()`.
 
-**SPCS 403 / Auth error**: The React app reads `/snowflake/session/token` for SPCS OAuth. Ensure the EAI (COLGATE_DASHBOARD_EAI) allows egress to the correct account host. Update network rule: `ALTER NETWORK RULE SKU_LAUNCH.INVENTORY.COLGATE_EGRESS_RULE SET VALUE_LIST = ('<your-account>.snowflakecomputing.com:443');`
+**SPCS 403 / Auth error**: The React app reads `/snowflake/session/token` for SPCS OAuth. Ensure the EAI (SKU_LAUNCH_EAI) allows egress to the correct account host. Update network rule: `ALTER NETWORK RULE SKU_LAUNCH.INVENTORY.SKU_LAUNCH_EGRESS_RULE SET VALUE_LIST = ('<your-account>.snowflakecomputing.com:443');`
 
 **SPCS endpoint requires biometric/passkey in browser**: Public SPCS endpoints use Snowflake OAuth which requires passkey verification. This is expected behavior.
 
@@ -436,11 +436,11 @@ SELECT SNOWFLAKE.CORTEX.DATA_AGENT_RUN(
 
 ```sql
 USE ROLE ACCOUNTADMIN;
-DROP SERVICE IF EXISTS SKU_LAUNCH.INVENTORY.COLGATE_LAUNCH_DASHBOARD;
-DROP COMPUTE POOL IF EXISTS COLGATE_REACT_POOL;
-DROP EXTERNAL ACCESS INTEGRATION IF EXISTS COLGATE_DASHBOARD_EAI;
+DROP SERVICE IF EXISTS SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD;
+DROP COMPUTE POOL IF EXISTS SKU_LAUNCH_POOL;
+DROP EXTERNAL ACCESS INTEGRATION IF EXISTS SKU_LAUNCH_EAI;
 DROP AGENT IF EXISTS SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT;
 DROP DATABASE IF EXISTS SKU_LAUNCH;
 DROP WAREHOUSE IF EXISTS AICOLLEGE;
-DROP INTEGRATION IF EXISTS COLGATE_GIT_INTEGRATION;
+DROP INTEGRATION IF EXISTS SKU_LAUNCH_GIT_INTEGRATION;
 ```

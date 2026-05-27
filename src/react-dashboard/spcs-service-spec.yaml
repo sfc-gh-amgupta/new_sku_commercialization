@@ -1,7 +1,7 @@
 spec:
   containers:
-    - name: colgate-launch-react
-      image: /SKU_LAUNCH/INVENTORY/IMAGE_REPO/colgate-launch-react:latest
+    - name: sku-launch-dashboard
+      image: /SKU_LAUNCH/INVENTORY/IMAGE_REPO/sku-launch-dashboard:latest
       resources:
         requests:
           cpu: 0.25

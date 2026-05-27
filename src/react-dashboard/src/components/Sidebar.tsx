@@ -20,7 +20,7 @@ export default function Sidebar() {
   return (
     <aside className="w-64 min-h-screen bg-[#0f2a4a] border-r border-[#1a3d66] flex flex-col shadow-xl">
       <div className="p-4 border-b border-[#1a3d66]">
-        <h1 className="font-bold text-lg text-white">Colgate-Palmolive</h1>
+        <h1 className="font-bold text-lg text-white">CPG Brand Co</h1>
         <p className="text-xs text-blue-300">SKU Launch Analytics · 12-week post-launch</p>
       </div>
       <nav className="flex-1 py-2">

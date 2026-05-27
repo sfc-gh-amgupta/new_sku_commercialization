@@ -1,4 +1,4 @@
--- Colgate v2 Product Launch Demo - Semantic Views
+-- CPG Brand Product Launch Demo - Semantic Views
 -- Creates 4 semantic views for the Cortex Agent tools
 
 USE DATABASE SKU_LAUNCH;

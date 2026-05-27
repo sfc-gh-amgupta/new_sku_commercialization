@@ -1,4 +1,4 @@
--- Colgate v2 Product Launch Demo - Cortex Agent
+-- CPG Brand Product Launch Demo - Cortex Agent
 -- Creates the Product Launch Agent in Snowflake Intelligence
 -- NOTE: If CREATE AGENT DDL is not available on your account, create via Snowflake Intelligence UI
 

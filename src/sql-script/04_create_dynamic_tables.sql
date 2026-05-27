@@ -1,4 +1,4 @@
--- Colgate v2 Product Launch Demo - Dynamic Tables
+-- CPG Brand Product Launch Demo - Dynamic Tables
 -- Creates all 10 Dynamic Tables (requires AICOLLEGE warehouse)
 
 USE DATABASE SKU_LAUNCH;

@@ -1,4 +1,4 @@
--- Colgate v2 Product Launch Demo - Cortex Search Service
+-- CPG Brand Product Launch Demo - Cortex Search Service
 
 USE DATABASE SKU_LAUNCH;
 USE SCHEMA CONSUMER_INSIGHTS;

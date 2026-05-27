@@ -113,7 +113,7 @@ export default function ExecutiveSummary() {
   return (
     <div>
       <h1 className="text-2xl font-bold text-white">Executive Summary</h1>
-      <p className="text-blue-300 text-sm mb-4">12-week post-launch performance across {SKUS.length} Colgate SKUs</p>
+      <p className="text-blue-300 text-sm mb-4">12-week post-launch performance across {SKUS.length} BrightSmile SKUs</p>
 
       <div className="grid grid-cols-4 gap-4 mb-6">
         <div>

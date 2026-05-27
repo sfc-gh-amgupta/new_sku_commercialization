@@ -23,10 +23,10 @@ export interface Retailer {
 }
 
 export const SKUS: SKU[] = [
-  { id: "SKU001", name: "Colgate Max White Toothpaste 6oz", shortName: "Colgate Max White", brand: "Colgate", category: "Oral Care - Whitening", plannedSrp: 6.99, forecastUnitsWeekly: 189329, forecastRevenueWeekly: 1323428, targetAcv: 80, targetStores: 2500, targetTrialHh: 2400, storyline: "strong", description: "Premium whitening toothpaste with advanced hydrogen peroxide formula. Delivers visible whitening results in 3 days. Targeting millennial and Gen Z consumers seeking fast whitening without sensitivity. Positioned in the high-growth premium whitening segment." },
-  { id: "SKU002", name: "Colgate Sensitive Pro 4.5oz", shortName: "Colgate Sensitive Pro", brand: "Colgate", category: "Oral Care - Sensitivity", plannedSrp: 7.49, forecastUnitsWeekly: 183250, forecastRevenueWeekly: 1372544, targetAcv: 70, targetStores: 2500, targetTrialHh: 2400, storyline: "pricing", description: "Advanced sensitivity relief formula with potassium nitrate and micro-repair technology. Clinically proven 24-hour sensitivity protection. Targeting adults 25-54 with tooth sensitivity issues. Currently underperforming in Southwest due to packaging complaints." },
-  { id: "SKU003", name: "Colgate Cavity Protection 6oz", shortName: "Colgate Cavity Protection", brand: "Colgate", category: "Oral Care - Cavity", plannedSrp: 4.99, forecastUnitsWeekly: 189310, forecastRevenueWeekly: 944637, targetAcv: 85, targetStores: 2500, targetTrialHh: 2000, storyline: "distribution", description: "Everyday cavity protection with fluoride formula. Family-friendly positioning with broad distribution across all channels. Consistent performer tracking slightly above forecast." },
-  { id: "SKU004", name: "Colgate Kids Bubble Fruit 4.6oz", shortName: "Colgate Kids", brand: "Colgate", category: "Oral Care - Kids", plannedSrp: 4.49, forecastUnitsWeekly: 189575, forecastRevenueWeekly: 851173, targetAcv: 75, targetStores: 2500, targetTrialHh: 1800, storyline: "promo", description: "Fun bubble fruit flavored toothpaste for children ages 2-6. Features popular character licensing and cavity-fighting fluoride. On track with forecast across all regions." },
+  { id: "SKU001", name: "BrightSmile Max White Toothpaste 6oz", shortName: "BrightSmile Max White", brand: "BrightSmile", category: "Oral Care - Whitening", plannedSrp: 6.99, forecastUnitsWeekly: 189329, forecastRevenueWeekly: 1323428, targetAcv: 80, targetStores: 2500, targetTrialHh: 2400, storyline: "strong", description: "Premium whitening toothpaste with advanced hydrogen peroxide formula. Delivers visible whitening results in 3 days. Targeting millennial and Gen Z consumers seeking fast whitening without sensitivity. Positioned in the high-growth premium whitening segment." },
+  { id: "SKU002", name: "BrightSmile Sensitive Pro 4.5oz", shortName: "BrightSmile Sensitive Pro", brand: "BrightSmile", category: "Oral Care - Sensitivity", plannedSrp: 7.49, forecastUnitsWeekly: 183250, forecastRevenueWeekly: 1372544, targetAcv: 70, targetStores: 2500, targetTrialHh: 2400, storyline: "pricing", description: "Advanced sensitivity relief formula with potassium nitrate and micro-repair technology. Clinically proven 24-hour sensitivity protection. Targeting adults 25-54 with tooth sensitivity issues. Currently underperforming in Southwest due to packaging complaints." },
+  { id: "SKU003", name: "BrightSmile Cavity Protection 6oz", shortName: "BrightSmile Cavity Protection", brand: "BrightSmile", category: "Oral Care - Cavity", plannedSrp: 4.99, forecastUnitsWeekly: 189310, forecastRevenueWeekly: 944637, targetAcv: 85, targetStores: 2500, targetTrialHh: 2000, storyline: "distribution", description: "Everyday cavity protection with fluoride formula. Family-friendly positioning with broad distribution across all channels. Consistent performer tracking slightly above forecast." },
+  { id: "SKU004", name: "BrightSmile Kids Bubble Fruit 4.6oz", shortName: "BrightSmile Kids", brand: "BrightSmile", category: "Oral Care - Kids", plannedSrp: 4.49, forecastUnitsWeekly: 189575, forecastRevenueWeekly: 851173, targetAcv: 75, targetStores: 2500, targetTrialHh: 1800, storyline: "promo", description: "Fun bubble fruit flavored toothpaste for children ages 2-6. Features popular character licensing and cavity-fighting fluoride. On track with forecast across all regions." },
 ];
 
 export const RETAILERS: Retailer[] = [
@@ -475,7 +475,7 @@ export const SUGGESTED_QUESTIONS = [
   "Can you look into the consumer purchase data to see if this is backed up for SKU 1 and 2?",
   "Do we have any consumer feedback?",
   "What backup DC options do we have for the Los Angeles DC to cover the Southwest while packaging is addressed?",
-  "What are the sentiment scores by topic for Colgate Sensitive Pro to quantify how widespread the packaging complaints are?",
+  "What are the sentiment scores by topic for BrightSmile Sensitive Pro to quantify how widespread the packaging complaints are?",
 ];
 
 export const RETAILER_SHARES: Record<string, number> = { Walmart: 0.38, Kroger: 0.25, Target: 0.20, CVS: 0.17 };
@@ -498,14 +498,14 @@ export const SENTIMENT_THEMES: Record<string, { positive: string[]; negative: { 
     ],
   },
   "SKU003": {
-    positive: ["Good cavity protection", "Affordable family option", "Classic Colgate taste", "Kids don't complain about it", "Reliable daily use"],
+    positive: ["Good cavity protection", "Affordable family option", "Classic BrightSmile taste", "Kids don't complain about it", "Reliable daily use"],
     negative: [
       { theme: "Nothing special vs store brand", verbatim: "\"What's the difference between this and the $2 store brand? Same fluoride, 2x the price.\" — CVS review, 3 stars" },
       { theme: "Hard to find in some stores", verbatim: "\"My local Walmart hasn't had this in stock for 3 weeks. Had to order online.\" — Facebook comment" },
     ],
   },
   "SKU004": {
-    positive: ["Kids love the flavor", "Fun character on tube", "Good for picky brushers", "Parents trust Colgate brand", "Gentle on young teeth"],
+    positive: ["Kids love the flavor", "Fun character on tube", "Good for picky brushers", "Parents trust BrightSmile brand", "Gentle on young teeth"],
     negative: [
       { theme: "Flavor wears off too fast", verbatim: "\"My 4-year-old says it stops tasting good after 10 seconds. She won't finish brushing.\" — Target review, 3 stars" },
       { theme: "Cap is hard for small hands", verbatim: "\"The flip cap is too stiff for my 3-year-old to open by himself. Defeats the independence goal.\" — Amazon review, 3 stars" },

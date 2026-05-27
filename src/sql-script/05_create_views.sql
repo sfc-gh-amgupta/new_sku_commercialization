@@ -1,4 +1,4 @@
--- Colgate v2 Product Launch Demo - Views
+-- CPG Brand Product Launch Demo - Views
 
 USE DATABASE SKU_LAUNCH;
 USE SCHEMA DISTRIBUTION;
