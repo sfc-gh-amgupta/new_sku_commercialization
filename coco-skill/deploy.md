@@ -386,6 +386,59 @@ SELECT SNOWFLAKE.CORTEX.DATA_AGENT_RUN(
 
 ---
 
+## Step 10 (Optional): Deploy Openflow Ingestion Pipelines
+
+This step sets up 5 Openflow process groups that simulate incremental data ingestion into the RAW tables. **Requires Openflow to be enabled on the target account.**
+
+### 10a: Check Openflow Availability
+
+```sql
+SHOW OPENFLOW DEPLOYMENTS;
+```
+
+| Result | Action |
+|--------|--------|
+| Returns rows | Openflow is enabled — continue to 10b |
+| Syntax error | Try legacy: `SHOW OPENFLOW DATA PLANE INTEGRATIONS;` |
+| Empty / permission error | Openflow not enabled — tell user: "Openflow is not enabled on this account. To enable: Snowsight > Ingestion > Openflow (requires ORGADMIN to accept Terms of Service). Then create a deployment and runtime via the UI. After that, re-run this step." |
+
+If Openflow is not available, **skip this step** — the demo works without it since all RAW tables are pre-populated with seed data.
+
+### 10b: Check for Existing Runtime
+
+```sql
+SHOW OPENFLOW RUNTIMES IN ACCOUNT;
+```
+
+If no runtime exists, instruct user:
+> "You have Openflow enabled but no runtime. Create one via: Snowsight > Ingestion > Openflow > Create a runtime. Select your deployment, choose Small node type, and assign a role with INSERT privileges on SKU_LAUNCH tables. Then return here."
+
+### 10c: Create Ingestion Flows
+
+Once a runtime is confirmed, use the CoCo Openflow skill to create 5 process groups:
+
+> "Using the openflow skill, create 5 ingestion PGs on the runtime. Each uses GenerateFlowFile → ConvertRecord → PutSnowpipeStreaming with SNOWFLAKE_MANAGED_TOKEN auth, scheduled every 5 minutes:"
+
+| PG Name | Target Table | 
+|---------|-------------|
+| Inventory Ingestion | `SKU_LAUNCH.INVENTORY.RAW_OF_DC_INVENTORY` |
+| Distribution Ingestion | `SKU_LAUNCH.DISTRIBUTION.RAW_OF_DC_SHIPMENTS` |
+| Consumer Social Ingestion | `SKU_LAUNCH.CONSUMER_INSIGHTS.RAW_OF_SOCIAL_MEDIA_FEEDBACK` |
+| Consumer Audio Ingestion | `SKU_LAUNCH.CONSUMER_INSIGHTS.RAW_OF_CALL_TRANSCRIPTS` |
+| SKU Sales Ingestion | `SKU_LAUNCH.SKU_SALES.RAW_OF_DAILY_STORE_POS` |
+
+The Openflow runtime role needs:
+```sql
+GRANT USAGE ON DATABASE SKU_LAUNCH TO ROLE <openflow_runtime_role>;
+GRANT USAGE ON ALL SCHEMAS IN DATABASE SKU_LAUNCH TO ROLE <openflow_runtime_role>;
+GRANT INSERT ON ALL TABLES IN DATABASE SKU_LAUNCH TO ROLE <openflow_runtime_role>;
+GRANT USAGE, OPERATE ON WAREHOUSE AICOLLEGE TO ROLE <openflow_runtime_role>;
+```
+
+See `openflow/README.md` in this repo for detailed PG architecture and schema mappings.
+
+---
+
 ## Stopping Points
 
 - After Step 0: if user declines to proceed
