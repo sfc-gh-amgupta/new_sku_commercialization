@@ -415,6 +415,10 @@ If no runtime exists, instruct user:
 
 ### 10c: Import Ingestion Flow Definitions
 
+**IMPORTANT**: Always use the CoCo `/openflow` skill for Openflow operations. Invoke it with: "Using the openflow skill, import the flow definitions from the openflow/ directory in this repo."
+
+**Critical Auth Finding**: When authenticating to the Openflow NiFi REST API with a PAT, you MUST include the `X-Snowflake-Authorization-Token-Type: PROGRAMMATIC_ACCESS_TOKEN` header alongside the `Authorization: Bearer <PAT>` header. Without this extra header, the API returns 401 even with a valid, non-expired PAT. This applies to ALL nipyapi/curl operations against the Openflow runtime.
+
 The repo contains exported PG definitions in `openflow/`. Import them into the runtime using nipyapi:
 
 ```python
