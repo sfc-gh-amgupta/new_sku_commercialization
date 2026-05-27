@@ -40,7 +40,7 @@ export const WEEKS = Array.from({ length: 12 }, (_, i) => ({ number: i + 1, labe
 
 export const SNOWFLAKE_CONFIG = {
   database: "SKU_LAUNCH",
-  warehouse: "AICOLLEGE",
+  warehouse: "SKU_LAUNCH_WH",
   agent: {
     database: "SNOWFLAKE_INTELLIGENCE",
     schema: "AGENTS",

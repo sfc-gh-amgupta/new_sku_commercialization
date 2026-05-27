@@ -36,7 +36,7 @@ export async function POST(req: Request) {
       headers,
       body: JSON.stringify({
         statement: sql,
-        warehouse: "AICOLLEGE",
+        warehouse: "SKU_LAUNCH_WH",
         database: "SKU_LAUNCH",
         timeout: 60,
       }),

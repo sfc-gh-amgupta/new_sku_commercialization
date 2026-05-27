@@ -40,7 +40,7 @@ export async function POST(req: Request) {
       headers,
       body: JSON.stringify({
         statement: sql,
-        warehouse: "AICOLLEGE",
+        warehouse: "SKU_LAUNCH_WH",
         database: "SKU_LAUNCH",
         timeout: 30,
       }),
@@ -49,7 +49,7 @@ export async function POST(req: Request) {
     const data = await resp.json();
     if (data.data && data.data.length > 0) {
       data.data = data.data.filter((row: string[]) => 
-        row[0] !== 'AICOLLEGE' && row[7] !== 'AICOLLEGE'
+        row[0] !== 'SKU_LAUNCH_WH' && row[7] !== 'SKU_LAUNCH_WH'
       );
       const seen = new Set<string>();
       data.data = data.data.filter((row: string[]) => {

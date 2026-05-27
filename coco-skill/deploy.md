@@ -17,7 +17,7 @@ Before ANY deployment, present this inventory to the user so they know what will
 |----------|---------|-------|
 | Database | SKU_LAUNCH | 1 |
 | Schemas | INVENTORY, SKU_SALES, DISTRIBUTION, CONSUMER_INSIGHTS | 4 |
-| Warehouse | AICOLLEGE (MEDIUM) | 1 |
+| Warehouse | SKU_LAUNCH_WH (MEDIUM) | 1 |
 | Tables | DIM + RAW tables across 4 schemas | 19 |
 | Dynamic Tables | Curated DTs with Cortex AI (SENTIMENT, CLASSIFY_TEXT, ST_DISTANCE) | 10 |
 | View | V_DC_BACKUP_OPTIONS (geospatial) | 1 |
@@ -90,7 +90,8 @@ DROP COMPUTE POOL IF EXISTS SKU_LAUNCH_POOL;
 DROP EXTERNAL ACCESS INTEGRATION IF EXISTS SKU_LAUNCH_EAI;
 DROP AGENT IF EXISTS SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT;
 DROP DATABASE IF EXISTS SKU_LAUNCH;
-DROP WAREHOUSE IF EXISTS AICOLLEGE;
+DROP WAREHOUSE IF EXISTS SKU_LAUNCH_WH;
+DROP ROLE IF EXISTS SKU_LAUNCH_ROLE;
 ```
 
 ## Step 3: Create Git Integration and Repository
@@ -100,11 +101,41 @@ USE ROLE ACCOUNTADMIN;
 ```
 
 ```sql
+CREATE ROLE IF NOT EXISTS SKU_LAUNCH_ROLE
+    COMMENT = 'Role for SKU Launch Product Launch demo';
+```
+
+```sql
+GRANT CREATE DATABASE ON ACCOUNT TO ROLE SKU_LAUNCH_ROLE;
+GRANT CREATE WAREHOUSE ON ACCOUNT TO ROLE SKU_LAUNCH_ROLE;
+GRANT CREATE COMPUTE POOL ON ACCOUNT TO ROLE SKU_LAUNCH_ROLE;
+GRANT BIND SERVICE ENDPOINT ON ACCOUNT TO ROLE SKU_LAUNCH_ROLE;
+GRANT CREATE INTEGRATION ON ACCOUNT TO ROLE SKU_LAUNCH_ROLE;
+```
+
+```sql
+DECLARE
+    current_user_name VARCHAR;
+BEGIN
+    current_user_name := CURRENT_USER();
+    EXECUTE IMMEDIATE 'GRANT ROLE SKU_LAUNCH_ROLE TO USER "' || current_user_name || '"';
+END;
+```
+
+```sql
 CREATE OR REPLACE API INTEGRATION SKU_LAUNCH_GIT_INTEGRATION
     API_PROVIDER = GIT_HTTPS_API
     API_ALLOWED_PREFIXES = ('https://github.com/sfc-gh-amgupta/')
     ENABLED = TRUE
     COMMENT = 'Integration for CPG Brand Product Launch repository';
+```
+
+```sql
+GRANT USAGE ON INTEGRATION SKU_LAUNCH_GIT_INTEGRATION TO ROLE SKU_LAUNCH_ROLE;
+```
+
+```sql
+USE ROLE SKU_LAUNCH_ROLE;
 ```
 
 ```sql
@@ -315,6 +346,27 @@ SELECT SNOWFLAKE.CORTEX.DATA_AGENT_RUN(
 
 **Only declare deployment SUCCESS after all test questions produce reasonable results.**
 
+## Step 8b: Dashboard Health Validation
+
+Validate the SPCS service is running and accessible:
+
+```sql
+CALL SYSTEM$GET_SERVICE_STATUS('SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD');
+```
+
+Parse the result to confirm container is READY:
+```sql
+SELECT v.value:status::STRING AS status, v.value:containerName::STRING AS container
+FROM TABLE(RESULT_SCAN(LAST_QUERY_ID())) t, LATERAL FLATTEN(input => PARSE_JSON(t."SYSTEM$GET_SERVICE_STATUS")) v;
+```
+
+```sql
+SHOW ENDPOINTS IN SERVICE SKU_LAUNCH.INVENTORY.SKU_LAUNCH_DASHBOARD;
+```
+Confirm `ingress_url` is returned and `is_public = true`.
+
+**Only proceed to Step 9 after Step 8 agent tests pass and SPCS service is confirmed READY.**
+
 ## Step 9: Deployment Complete — Everything You Need to Demo
 
 After all tests pass, present the following to the user as the final deployment handoff.
@@ -375,7 +427,7 @@ SELECT SNOWFLAKE.CORTEX.DATA_AGENT_RUN(
 | **Cortex Agent** | PRODUCT_LAUNCH_AGENT (5 tools) | AI & ML > Agents (or Snowflake Intelligence) |
 | **SPCS Service** | SKU_LAUNCH_DASHBOARD (React/Next.js) | Compute > Services |
 | **Compute Pool** | SKU_LAUNCH_POOL (CPU_X64_XS) | Compute > Compute Pools |
-| **Warehouse** | AICOLLEGE (MEDIUM) | Warehouses |
+| **Warehouse** | SKU_LAUNCH_WH (MEDIUM) | Warehouses |
 
 #### Monitoring
 
@@ -480,7 +532,7 @@ The Openflow runtime role needs:
 GRANT USAGE ON DATABASE SKU_LAUNCH TO ROLE <openflow_runtime_role>;
 GRANT USAGE ON ALL SCHEMAS IN DATABASE SKU_LAUNCH TO ROLE <openflow_runtime_role>;
 GRANT INSERT ON ALL TABLES IN DATABASE SKU_LAUNCH TO ROLE <openflow_runtime_role>;
-GRANT USAGE, OPERATE ON WAREHOUSE AICOLLEGE TO ROLE <openflow_runtime_role>;
+GRANT USAGE, OPERATE ON WAREHOUSE SKU_LAUNCH_WH TO ROLE <openflow_runtime_role>;
 ```
 
 See `openflow/README.md` in this repo for detailed PG architecture and schema mappings.
@@ -511,7 +563,7 @@ See `openflow/README.md` in this repo for detailed PG architecture and schema ma
 
 **Cortex Search not starting**: Uses INCREMENTAL refresh and may take 2-5 minutes to build initial index. Check `indexing_state` via `SHOW CORTEX SEARCH SERVICES`.
 
-**Dynamic Tables not refreshing**: Check warehouse AICOLLEGE is STARTED: `SHOW WAREHOUSES LIKE 'AICOLLEGE'`. If suspended, `ALTER WAREHOUSE AICOLLEGE RESUME`.
+**Dynamic Tables not refreshing**: Check warehouse SKU_LAUNCH_WH is STARTED: `SHOW WAREHOUSES LIKE 'SKU_LAUNCH_WH'`. If suspended, `ALTER WAREHOUSE SKU_LAUNCH_WH RESUME`.
 
 **Dynamic Tables with AI functions fail**: SENTIMENT and CLASSIFY_TEXT require Cortex AI availability. Enable cross-region: `ALTER ACCOUNT SET CORTEX_ENABLED_CROSS_REGION = 'ANY_REGION';`
 
@@ -542,6 +594,7 @@ DROP COMPUTE POOL IF EXISTS SKU_LAUNCH_POOL;
 DROP EXTERNAL ACCESS INTEGRATION IF EXISTS SKU_LAUNCH_EAI;
 DROP AGENT IF EXISTS SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT;
 DROP DATABASE IF EXISTS SKU_LAUNCH;
-DROP WAREHOUSE IF EXISTS AICOLLEGE;
+DROP WAREHOUSE IF EXISTS SKU_LAUNCH_WH;
 DROP INTEGRATION IF EXISTS SKU_LAUNCH_GIT_INTEGRATION;
+DROP ROLE IF EXISTS SKU_LAUNCH_ROLE;
 ```

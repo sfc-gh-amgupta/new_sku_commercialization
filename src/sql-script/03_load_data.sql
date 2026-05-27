@@ -4,7 +4,7 @@
 -- Also loads MP3 audio files to the RAW_AUDIO stage
 
 USE DATABASE SKU_LAUNCH;
-USE WAREHOUSE AICOLLEGE;
+USE WAREHOUSE SKU_LAUNCH_WH;
 
 ----------------------------------------------------------------------
 -- INVENTORY

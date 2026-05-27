@@ -61,6 +61,6 @@ for pg in nipyapi.canvas.list_all_process_groups(root_id):
 ## Notes
 
 - Openflow uses `SNOWFLAKE_MANAGED_TOKEN` auth (no key pair needed for Snowflake deployments)
-- The `execute_as_role` for the runtime needs USAGE on warehouse AICOLLEGE and INSERT on target tables
+- The `execute_as_role` for the runtime needs USAGE on warehouse SKU_LAUNCH_WH and INSERT on target tables
 - `ExecuteSQLStatement` processor does NOT support DML (INSERT) -- use PutSnowpipeStreaming instead
 - GenerateFlowFile needs to be upstream of any processor that expects FlowFiles

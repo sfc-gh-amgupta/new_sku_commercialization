@@ -1,15 +1,15 @@
 -- CPG Brand Product Launch Demo - Dynamic Tables
--- Creates all 10 Dynamic Tables (requires AICOLLEGE warehouse)
+-- Creates all 10 Dynamic Tables (requires SKU_LAUNCH_WH warehouse)
 
 USE DATABASE SKU_LAUNCH;
-USE WAREHOUSE AICOLLEGE;
+USE WAREHOUSE SKU_LAUNCH_WH;
 
 ----------------------------------------------------------------------
 -- INVENTORY
 ----------------------------------------------------------------------
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.INVENTORY.CURATED_DT_DC_INVENTORY_STATUS
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 WITH latest_inventory AS (
   SELECT dc_id, sku_id, snapshot_date, units_on_hand, units_allocated, units_available, reorder_point, safety_stock
@@ -32,7 +32,7 @@ JOIN SKU_LAUNCH.INVENTORY.DIM_SKU s ON i.sku_id = s.sku_id;
 ----------------------------------------------------------------------
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.SKU_SALES.CURATED_DT_SKU_PERFORMANCE
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 SELECT s.sku_id, s.sku_name, s.variant, s.is_new_launch, p.region, p.week_ending,
   WEEKOFYEAR(p.week_ending) AS week_number, p.sales_units AS actual_units,
@@ -55,7 +55,7 @@ LEFT JOIN SKU_LAUNCH.SKU_SALES.PRELAUNCH_FORECAST f
 WHERE s.is_new_launch = TRUE;
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.SKU_SALES.CURATED_DT_REGIONAL_VARIANCE
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 WITH regional_totals AS (
   SELECT sku_id, region, SUM(actual_units) AS total_actual, SUM(forecast_units) AS total_forecast, COUNT(DISTINCT week_ending) AS weeks_reported
@@ -77,7 +77,7 @@ JOIN national_avg n ON r.sku_id = n.sku_id
 JOIN SKU_LAUNCH.SKU_SALES.DIM_SKU s ON r.sku_id = s.sku_id;
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.SKU_SALES.CURATED_DT_STORE_PERFORMANCE
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 SELECT st.store_id, st.retailer, st.region, st.state, st.city, st.latitude, st.longitude,
   p.sku_id, sk.sku_name,
@@ -92,7 +92,7 @@ WHERE sk.is_new_launch = TRUE
 GROUP BY st.store_id, st.retailer, st.region, st.state, st.city, st.latitude, st.longitude, p.sku_id, sk.sku_name;
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.SKU_SALES.CURATED_DT_CONSUMER_METRICS
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 WITH weekly_data AS (
   SELECT
@@ -128,7 +128,7 @@ FROM weekly_data w
 LEFT JOIN SKU_LAUNCH.SKU_SALES.CONSUMER_FORECAST f ON w.sku_id = f.sku_id;
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.SKU_SALES.CURATED_DT_PROMO_EVENTS
-  lag = '1 hour' refresh_mode = 'AUTO' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'AUTO' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 SELECT
   p.promo_id,
@@ -151,7 +151,7 @@ WHERE s.is_new_launch = TRUE;
 ----------------------------------------------------------------------
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.DISTRIBUTION.CURATED_DT_STORE_GEOSPATIAL
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 WITH dc_locations AS (
   SELECT 'DC_EAST' AS dc_id, ST_MAKEPOINT(-75.1652, 39.9526) AS geo_point UNION ALL
@@ -176,7 +176,7 @@ CROSS JOIN (SELECT geo_point FROM dc_locations WHERE dc_id = 'DC_WEST') dc_west
 CROSS JOIN (SELECT geo_point FROM dc_locations WHERE dc_id = 'DC_CENTRAL') dc_central;
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.DISTRIBUTION.CURATED_DT_DC_SHIPMENTS_STATUS
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 SELECT s.shipment_id, s.plant_id, p.plant_name, s.dc_id, dc.dc_name, s.sku_id, sk.sku_name,
   s.units_shipped, s.ship_date, s.expected_arrival_date, s.actual_arrival_date,
@@ -196,7 +196,7 @@ JOIN SKU_LAUNCH.DISTRIBUTION.DIM_SKU sk ON s.sku_id = sk.sku_id;
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.CONSUMER_INSIGHTS.CURATED_DT_CALL_TRANSCRIPTS
   IMMUTABLE WHERE (call_date < CURRENT_DATE() - INTERVAL '1 day')
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 WITH base AS (
   SELECT call_id, call_date, audio_file_path, transcript_text
@@ -225,7 +225,7 @@ SELECT
 FROM base;
 
 CREATE OR REPLACE DYNAMIC TABLE SKU_LAUNCH.CONSUMER_INSIGHTS.CURATED_DT_SOCIAL_TOPIC_ANALYSIS
-  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = AICOLLEGE
+  lag = '1 hour' refresh_mode = 'FULL' initialize = 'ON_CREATE' warehouse = SKU_LAUNCH_WH
 AS
 SELECT post_id, platform, sku_id, post_date, content,
   SNOWFLAKE.CORTEX.SENTIMENT(content) AS sentiment_score,
