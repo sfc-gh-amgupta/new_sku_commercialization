@@ -1,0 +1,17 @@
+spec:
+  containers:
+    - name: colgate-launch-react
+      image: /SKU_LAUNCH/INVENTORY/IMAGE_REPO/colgate-launch-react:latest
+      resources:
+        requests:
+          cpu: 0.25
+          memory: 256Mi
+        limits:
+          cpu: 0.5
+          memory: 512Mi
+  endpoints:
+    - name: app
+      port: 3000
+      public: true
+  networkPolicyConfig:
+    allowInternetEgress: true

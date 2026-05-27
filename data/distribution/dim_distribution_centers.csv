@@ -1,0 +1,6 @@
+"DC_ID","DC_NAME","CITY","STATE","LATITUDE","LONGITUDE","LOCATION","REGIONS_SERVED","CAPACITY_UNITS"
+"DC001","Atlanta DC","Atlanta","GA",33.749,-84.388,"{""coordinates"":[-8.438800000000001e+01,3.374900000000000e+01],""type"":""Point""}","[""Southeast""]",500000
+"DC002","Chicago DC","Chicago","IL",41.878,-87.63,"{""coordinates"":[-8.763000000000000e+01,4.187800000000000e+01],""type"":""Point""}","[""Midwest"",""Northeast""]",600000
+"DC003","Los Angeles DC","Los Angeles","CA",34.052,-118.244,"{""coordinates"":[-1.182440000000000e+02,3.405200000000000e+01],""type"":""Point""}","[""Southwest"",""West"",""Pacific Northwest""]",550000
+"DC004","Denver DC","Denver","CO",39.7392,-104.9903,"{""coordinates"":[-1.049903000000000e+02,3.973920000000000e+01],""type"":""Point""}","[""Southwest"",""West Coast""]",400000
+"DC005","Nashville DC","Nashville","TN",36.1627,-86.7816,"{""coordinates"":[-8.678160000000000e+01,3.616270000000000e+01],""type"":""Point""}","[""Southeast"",""South Central""]",450000

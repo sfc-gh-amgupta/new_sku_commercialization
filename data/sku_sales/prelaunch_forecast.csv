@@ -1,0 +1,337 @@
+"SKU_ID","REGION","WEEK_NUMBER","FORECAST_UNITS"
+"SKU002","Southeast",44,40370
+"SKU002","Southeast",42,40691
+"SKU002","Midwest",50,36651
+"SKU002","Southeast",47,40348
+"SKU002","Midwest",42,36698
+"SKU002","Southwest",45,28902
+"SKU002","Northeast",40,26504
+"SKU002","Southwest",43,29007
+"SKU002","Southwest",46,28767
+"SKU002","Southeast",43,40062
+"SKU002","Midwest",43,36662
+"SKU002","Northeast",47,26383
+"SKU002","Southeast",50,40483
+"SKU002","Midwest",40,36576
+"SKU002","Southwest",42,28831
+"SKU002","Southwest",49,28632
+"SKU002","Southwest",48,29027
+"SKU002","Northeast",41,26389
+"SKU002","Southwest",47,28889
+"SKU002","Midwest",41,36701
+"SKU002","Southwest",50,28583
+"SKU002","West Coast",48,8903
+"SKU002","West Coast",41,8887
+"SKU002","West Coast",45,8997
+"SKU002","South Central",51,29623
+"SKU002","South Central",47,29848
+"SKU002","South Central",45,29545
+"SKU002","South Central",42,29562
+"SKU002","South Central",40,29561
+"SKU002","South Central",43,29301
+"SKU002","Northeast",49,26318
+"SKU002","Northeast",46,26445
+"SKU002","Northeast",43,26541
+"SKU002","Northeast",42,26468
+"SKU002","West Coast",50,8998
+"SKU002","West Coast",49,8943
+"SKU002","West Coast",47,8938
+"SKU002","West Coast",44,8859
+"SKU002","South Central",50,29433
+"SKU002","Southeast",49,40655
+"SKU002","Southeast",45,40331
+"SKU002","Southeast",41,40583
+"SKU002","Southeast",46,40477
+"SKU002","Southeast",51,40527
+"SKU002","Southeast",40,40498
+"SKU002","Midwest",46,36564
+"SKU002","Midwest",51,37175
+"SKU002","Southwest",41,28811
+"SKU002","Southeast",48,40619
+"SKU002","Midwest",44,36784
+"SKU002","Southwest",40,28751
+"SKU002","Southwest",51,28784
+"SKU002","Northeast",48,26447
+"SKU002","West Coast",46,8904
+"SKU002","West Coast",40,8893
+"SKU002","South Central",41,29467
+"SKU002","Midwest",45,36837
+"SKU002","Midwest",48,36810
+"SKU002","Midwest",49,36677
+"SKU002","Southwest",44,28707
+"SKU002","Northeast",44,26340
+"SKU002","Northeast",45,26534
+"SKU002","Midwest",47,36807
+"SKU002","Northeast",50,26383
+"SKU002","Northeast",51,26360
+"SKU002","West Coast",42,8863
+"SKU002","West Coast",51,8958
+"SKU002","West Coast",43,8857
+"SKU002","South Central",49,29405
+"SKU002","South Central",46,29317
+"SKU002","South Central",44,29536
+"SKU002","South Central",48,29285
+"SKU002","Pacific Northwest",51,12361
+"SKU002","Pacific Northwest",48,12333
+"SKU002","Pacific Northwest",45,12353
+"SKU002","Pacific Northwest",43,12418
+"SKU002","Pacific Northwest",49,12429
+"SKU002","Pacific Northwest",41,12406
+"SKU002","Pacific Northwest",50,12414
+"SKU002","Pacific Northwest",42,12426
+"SKU002","Pacific Northwest",44,12431
+"SKU002","Pacific Northwest",47,12276
+"SKU002","Pacific Northwest",40,12491
+"SKU002","Pacific Northwest",46,12397
+"SKU001","Midwest",40,41018
+"SKU001","Midwest",41,41018
+"SKU001","Midwest",42,41018
+"SKU001","Midwest",43,41018
+"SKU001","Midwest",44,41018
+"SKU001","Midwest",45,41018
+"SKU001","Midwest",46,41018
+"SKU001","Midwest",47,41018
+"SKU001","Midwest",48,41018
+"SKU001","Midwest",49,41018
+"SKU001","Midwest",50,41018
+"SKU001","Midwest",51,41018
+"SKU001","Northeast",40,28232
+"SKU001","Northeast",41,28232
+"SKU001","Northeast",42,28232
+"SKU001","Northeast",43,28232
+"SKU001","Northeast",44,28232
+"SKU001","Northeast",45,28232
+"SKU001","Northeast",46,28232
+"SKU001","Northeast",47,28232
+"SKU001","Northeast",48,28232
+"SKU001","Northeast",49,28232
+"SKU001","Northeast",50,28232
+"SKU001","Northeast",51,28232
+"SKU001","Pacific Northwest",40,12397
+"SKU001","Pacific Northwest",41,12397
+"SKU001","Pacific Northwest",42,12397
+"SKU001","Pacific Northwest",43,12397
+"SKU001","Pacific Northwest",44,12397
+"SKU001","Pacific Northwest",45,12397
+"SKU001","Pacific Northwest",46,12397
+"SKU001","Pacific Northwest",47,12397
+"SKU001","Pacific Northwest",48,12397
+"SKU001","Pacific Northwest",49,12397
+"SKU001","Pacific Northwest",50,12397
+"SKU001","Pacific Northwest",51,12397
+"SKU001","South Central",40,32074
+"SKU001","South Central",41,32074
+"SKU001","South Central",42,32074
+"SKU001","South Central",43,32074
+"SKU001","South Central",44,32074
+"SKU001","South Central",45,32074
+"SKU001","South Central",46,32074
+"SKU001","South Central",47,32074
+"SKU001","South Central",48,32074
+"SKU001","South Central",49,32074
+"SKU001","South Central",50,32074
+"SKU001","South Central",51,32074
+"SKU001","Southeast",40,41697
+"SKU001","Southeast",41,41697
+"SKU001","Southeast",42,41697
+"SKU001","Southeast",43,41697
+"SKU001","Southeast",44,41697
+"SKU001","Southeast",45,41697
+"SKU001","Southeast",46,41697
+"SKU001","Southeast",47,41697
+"SKU001","Southeast",48,41697
+"SKU001","Southeast",49,41697
+"SKU001","Southeast",50,41697
+"SKU001","Southeast",51,41697
+"SKU001","Southwest",40,23877
+"SKU001","Southwest",41,23877
+"SKU001","Southwest",42,23877
+"SKU001","Southwest",43,23877
+"SKU001","Southwest",44,23877
+"SKU001","Southwest",45,23877
+"SKU001","Southwest",46,23877
+"SKU001","Southwest",47,23877
+"SKU001","Southwest",48,23877
+"SKU001","Southwest",49,23877
+"SKU001","Southwest",50,23877
+"SKU001","Southwest",51,23877
+"SKU001","West Coast",40,10034
+"SKU001","West Coast",41,10034
+"SKU001","West Coast",42,10034
+"SKU001","West Coast",43,10034
+"SKU001","West Coast",44,10034
+"SKU001","West Coast",45,10034
+"SKU001","West Coast",46,10034
+"SKU001","West Coast",47,10034
+"SKU001","West Coast",48,10034
+"SKU001","West Coast",49,10034
+"SKU001","West Coast",50,10034
+"SKU001","West Coast",51,10034
+"SKU003","Midwest",40,41043
+"SKU003","Midwest",41,41043
+"SKU003","Midwest",42,41043
+"SKU003","Midwest",43,41043
+"SKU003","Midwest",44,41043
+"SKU003","Midwest",45,41043
+"SKU003","Midwest",46,41043
+"SKU003","Midwest",47,41043
+"SKU003","Midwest",48,41043
+"SKU003","Midwest",49,41043
+"SKU003","Midwest",50,41043
+"SKU003","Midwest",51,41043
+"SKU003","Northeast",40,28209
+"SKU003","Northeast",41,28209
+"SKU003","Northeast",42,28209
+"SKU003","Northeast",43,28209
+"SKU003","Northeast",44,28209
+"SKU003","Northeast",45,28209
+"SKU003","Northeast",46,28209
+"SKU003","Northeast",47,28209
+"SKU003","Northeast",48,28209
+"SKU003","Northeast",49,28209
+"SKU003","Northeast",50,28209
+"SKU003","Northeast",51,28209
+"SKU003","Pacific Northwest",40,12367
+"SKU003","Pacific Northwest",41,12367
+"SKU003","Pacific Northwest",42,12367
+"SKU003","Pacific Northwest",43,12367
+"SKU003","Pacific Northwest",44,12367
+"SKU003","Pacific Northwest",45,12367
+"SKU003","Pacific Northwest",46,12367
+"SKU003","Pacific Northwest",47,12367
+"SKU003","Pacific Northwest",48,12367
+"SKU003","Pacific Northwest",49,12367
+"SKU003","Pacific Northwest",50,12367
+"SKU003","Pacific Northwest",51,12367
+"SKU003","South Central",40,32093
+"SKU003","South Central",41,32093
+"SKU003","South Central",42,32093
+"SKU003","South Central",43,32093
+"SKU003","South Central",44,32093
+"SKU003","South Central",45,32093
+"SKU003","South Central",46,32093
+"SKU003","South Central",47,32093
+"SKU003","South Central",48,32093
+"SKU003","South Central",49,32093
+"SKU003","South Central",50,32093
+"SKU003","South Central",51,32093
+"SKU003","Southeast",40,41722
+"SKU003","Southeast",41,41722
+"SKU003","Southeast",42,41722
+"SKU003","Southeast",43,41722
+"SKU003","Southeast",44,41722
+"SKU003","Southeast",45,41722
+"SKU003","Southeast",46,41722
+"SKU003","Southeast",47,41722
+"SKU003","Southeast",48,41722
+"SKU003","Southeast",49,41722
+"SKU003","Southeast",50,41722
+"SKU003","Southeast",51,41722
+"SKU003","Southwest",40,23840
+"SKU003","Southwest",41,23840
+"SKU003","Southwest",42,23840
+"SKU003","Southwest",43,23840
+"SKU003","Southwest",44,23840
+"SKU003","Southwest",45,23840
+"SKU003","Southwest",46,23840
+"SKU003","Southwest",47,23840
+"SKU003","Southwest",48,23840
+"SKU003","Southwest",49,23840
+"SKU003","Southwest",50,23840
+"SKU003","Southwest",51,23840
+"SKU003","West Coast",40,10036
+"SKU003","West Coast",41,10036
+"SKU003","West Coast",42,10036
+"SKU003","West Coast",43,10036
+"SKU003","West Coast",44,10036
+"SKU003","West Coast",45,10036
+"SKU003","West Coast",46,10036
+"SKU003","West Coast",47,10036
+"SKU003","West Coast",48,10036
+"SKU003","West Coast",49,10036
+"SKU003","West Coast",50,10036
+"SKU003","West Coast",51,10036
+"SKU004","Midwest",40,40948
+"SKU004","Midwest",41,40948
+"SKU004","Midwest",42,40948
+"SKU004","Midwest",43,40948
+"SKU004","Midwest",44,40948
+"SKU004","Midwest",45,40948
+"SKU004","Midwest",46,40948
+"SKU004","Midwest",47,40948
+"SKU004","Midwest",48,40948
+"SKU004","Midwest",49,40948
+"SKU004","Midwest",50,40948
+"SKU004","Midwest",51,40948
+"SKU004","Northeast",40,28290
+"SKU004","Northeast",41,28290
+"SKU004","Northeast",42,28290
+"SKU004","Northeast",43,28290
+"SKU004","Northeast",44,28290
+"SKU004","Northeast",45,28290
+"SKU004","Northeast",46,28290
+"SKU004","Northeast",47,28290
+"SKU004","Northeast",48,28290
+"SKU004","Northeast",49,28290
+"SKU004","Northeast",50,28290
+"SKU004","Northeast",51,28290
+"SKU004","Pacific Northwest",40,12415
+"SKU004","Pacific Northwest",41,12415
+"SKU004","Pacific Northwest",42,12415
+"SKU004","Pacific Northwest",43,12415
+"SKU004","Pacific Northwest",44,12415
+"SKU004","Pacific Northwest",45,12415
+"SKU004","Pacific Northwest",46,12415
+"SKU004","Pacific Northwest",47,12415
+"SKU004","Pacific Northwest",48,12415
+"SKU004","Pacific Northwest",49,12415
+"SKU004","Pacific Northwest",50,12415
+"SKU004","Pacific Northwest",51,12415
+"SKU004","South Central",40,32083
+"SKU004","South Central",41,32083
+"SKU004","South Central",42,32083
+"SKU004","South Central",43,32083
+"SKU004","South Central",44,32083
+"SKU004","South Central",45,32083
+"SKU004","South Central",46,32083
+"SKU004","South Central",47,32083
+"SKU004","South Central",48,32083
+"SKU004","South Central",49,32083
+"SKU004","South Central",50,32083
+"SKU004","South Central",51,32083
+"SKU004","Southeast",40,41834
+"SKU004","Southeast",41,41834
+"SKU004","Southeast",42,41834
+"SKU004","Southeast",43,41834
+"SKU004","Southeast",44,41834
+"SKU004","Southeast",45,41834
+"SKU004","Southeast",46,41834
+"SKU004","Southeast",47,41834
+"SKU004","Southeast",48,41834
+"SKU004","Southeast",49,41834
+"SKU004","Southeast",50,41834
+"SKU004","Southeast",51,41834
+"SKU004","Southwest",40,23938
+"SKU004","Southwest",41,23938
+"SKU004","Southwest",42,23938
+"SKU004","Southwest",43,23938
+"SKU004","Southwest",44,23938
+"SKU004","Southwest",45,23938
+"SKU004","Southwest",46,23938
+"SKU004","Southwest",47,23938
+"SKU004","Southwest",48,23938
+"SKU004","Southwest",49,23938
+"SKU004","Southwest",50,23938
+"SKU004","Southwest",51,23938
+"SKU004","West Coast",40,10067
+"SKU004","West Coast",41,10067
+"SKU004","West Coast",42,10067
+"SKU004","West Coast",43,10067
+"SKU004","West Coast",44,10067
+"SKU004","West Coast",45,10067
+"SKU004","West Coast",46,10067
+"SKU004","West Coast",47,10067
+"SKU004","West Coast",48,10067
+"SKU004","West Coast",49,10067
+"SKU004","West Coast",50,10067
+"SKU004","West Coast",51,10067
