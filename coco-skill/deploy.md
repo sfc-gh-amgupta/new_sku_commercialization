@@ -413,19 +413,63 @@ SHOW OPENFLOW RUNTIMES IN ACCOUNT;
 If no runtime exists, instruct user:
 > "You have Openflow enabled but no runtime. Create one via: Snowsight > Ingestion > Openflow > Create a runtime. Select your deployment, choose Small node type, and assign a role with INSERT privileges on SKU_LAUNCH tables. Then return here."
 
-### 10c: Create Ingestion Flows
+### 10c: Import Ingestion Flow Definitions
 
-Once a runtime is confirmed, use the CoCo Openflow skill to create 5 process groups:
+The repo contains exported PG definitions in `openflow/`. Import them into the runtime using nipyapi:
 
-> "Using the openflow skill, create 5 ingestion PGs on the runtime. Each uses GenerateFlowFile → ConvertRecord → PutSnowpipeStreaming with SNOWFLAKE_MANAGED_TOKEN auth, scheduled every 5 minutes:"
+```python
+import nipyapi, json, os
 
-| PG Name | Target Table | 
-|---------|-------------|
-| Inventory Ingestion | `SKU_LAUNCH.INVENTORY.RAW_OF_DC_INVENTORY` |
-| Distribution Ingestion | `SKU_LAUNCH.DISTRIBUTION.RAW_OF_DC_SHIPMENTS` |
-| Consumer Social Ingestion | `SKU_LAUNCH.CONSUMER_INSIGHTS.RAW_OF_SOCIAL_MEDIA_FEEDBACK` |
-| Consumer Audio Ingestion | `SKU_LAUNCH.CONSUMER_INSIGHTS.RAW_OF_CALL_TRANSCRIPTS` |
-| SKU Sales Ingestion | `SKU_LAUNCH.SKU_SALES.RAW_OF_DAILY_STORE_POS` |
+# Auth with PAT + token type header
+PAT = os.environ.get('SNOWFLAKE_PAT') or '<your-pat>'
+nipyapi.utils.set_endpoint('<runtime-nifi-api-url>')
+nipyapi.config.nifi_config.api_key = {'Authorization': f'Bearer {PAT}'}
+nipyapi.config.nifi_config.api_key_prefix = {'Authorization': ''}
+# Add custom header for Openflow auth
+nipyapi.config.nifi_config.default_headers = {
+    'X-Snowflake-Authorization-Token-Type': 'PROGRAMMATIC_ACCESS_TOKEN'
+}
+
+root_id = nipyapi.canvas.get_root_pg_id()
+
+# Import each PG from the exported JSON files
+flow_files = [
+    'openflow/inventory_ingestion.json',
+    'openflow/distribution_ingestion.json',
+    'openflow/consumer_social_ingestion.json',
+    'openflow/consumer_audio_ingestion.json',
+    'openflow/sku_sales_ingestion.json',
+    'openflow/audio_ingestion_pipeline.json',
+]
+
+for f in flow_files:
+    with open(f) as fh:
+        flow_def = json.load(fh)
+    # Upload via NiFi REST API
+    nipyapi.nifi.ProcessGroupsApi().upload_process_group(root_id, file=f)
+    print(f'Imported: {f}')
+```
+
+Alternatively, import via curl:
+```bash
+PAT="<your-pat>"
+RUNTIME_URL="<runtime-nifi-api-url>"
+for f in openflow/*.json; do
+  curl -s -X POST "${RUNTIME_URL}/process-groups/root/process-groups/upload" \
+    -H "Authorization: Bearer ${PAT}" \
+    -H "X-Snowflake-Authorization-Token-Type: PROGRAMMATIC_ACCESS_TOKEN" \
+    -F "file=@${f}" && echo " Imported: ${f}"
+done
+```
+
+| Flow Template | Target Table |
+|---------------|-------------|
+| `inventory_ingestion.json` | `SKU_LAUNCH.INVENTORY.RAW_OF_DC_INVENTORY` |
+| `distribution_ingestion.json` | `SKU_LAUNCH.DISTRIBUTION.RAW_OF_DC_SHIPMENTS` |
+| `consumer_social_ingestion.json` | `SKU_LAUNCH.CONSUMER_INSIGHTS.RAW_OF_SOCIAL_MEDIA_FEEDBACK` |
+| `consumer_audio_ingestion.json` | `SKU_LAUNCH.CONSUMER_INSIGHTS.RAW_OF_CALL_TRANSCRIPTS` |
+| `sku_sales_ingestion.json` | `SKU_LAUNCH.SKU_SALES.RAW_OF_DAILY_STORE_POS` |
+| `audio_ingestion_pipeline.json` | Audio transcription pipeline |
 
 The Openflow runtime role needs:
 ```sql
