@@ -28,12 +28,7 @@ export default function SnowflakeIntelligence({ docked = false, onToggleDock }: 
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [thread, setThread] = useState<ThreadState>({ threadId: null, parentMessageId: null });
-  const [siAgentUrl, setSiAgentUrl] = useState<string>("");
   const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    fetch("/api/config").then(r => r.json()).then(d => setSiAgentUrl(d.siAgentUrl)).catch(() => {});
-  }, []);
 
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -238,14 +233,14 @@ export default function SnowflakeIntelligence({ docked = false, onToggleDock }: 
           </div>
         </div>
         <div className="flex items-center gap-2">
-          {siAgentUrl && <a
-            href={siAgentUrl}
+          <a
+            href="https://ai.snowflake.com/sfsenorthamerica/rraz_aws1/#/ai/chat/new?db=SNOWFLAKE_INTELLIGENCE&schema=AGENTS&agent=PRODUCT_LAUNCH_AGENT"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[10px] bg-slate-700 hover:bg-slate-600 text-blue-200 px-2 py-1 rounded transition-colors whitespace-nowrap"
           >
             Launch in Snowflake Cowork
-          </a>}
+          </a>
           <button onClick={resetConversation} className="text-slate-400 hover:text-white px-2 text-xs" title="New conversation">New</button>
           {onToggleDock && (
             <button onClick={onToggleDock} className="text-slate-400 hover:text-white px-1" title={docked ? "Undock" : "Dock to side"}>

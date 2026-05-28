@@ -24,13 +24,7 @@ function getAuthHeaders(): { headers: Record<string, string> } | null {
 
 export async function POST(req: Request) {
   const { question, threadId, parentMessageId } = await req.json();
-  const host = process.env.SNOWFLAKE_HOST;
-  if (!host) {
-    return new Response(JSON.stringify({ error: "SNOWFLAKE_HOST not configured" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
+  const host = process.env.SNOWFLAKE_HOST || "sfsenorthamerica-rraz-aws1.snowflakecomputing.com";
 
   const auth = getAuthHeaders();
   if (!auth) {
