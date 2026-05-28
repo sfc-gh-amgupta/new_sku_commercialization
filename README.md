@@ -42,11 +42,12 @@ A complete Snowflake-native solution for monitoring new product (SKU) launches a
 - **Docker** installed locally (for building the React app image)
 - **ACCOUNTADMIN** role (or equivalent privileges)
 
-## Quick Start with CoCo
+## 1-Prompt CoCo Deployment
 
-1. Clone this repo and connect CoCo to your Snowflake account
-2. Tell CoCo: *"Deploy the CPG Brand demo using the scripts in src/sql-script/"*
-3. Or follow the step-by-step below
+```
+deploy demo for the skill at https://github.com/sfc-gh-amgupta/new_sku_commercialization
+Also create a document of the issues as you deploy using the skill even if you resolve them.
+```
 
 ## Step-by-Step Deployment
 
