@@ -1,9 +1,9 @@
 "SKU_ID","SKU_NAME","CATEGORY","SUBCATEGORY","VARIANT","LAUNCH_DATE","IS_NEW_LAUNCH","MSRP"
-"SKU001","Colgate Max White","Oral Care","Toothpaste","Whitening","2025-12-01",true,6.99
-"SKU002","Colgate Sensitive Pro","Oral Care","Toothpaste","Sensitivity","2025-12-01",true,7.49
-"SKU003","Colgate Cavity Protection","Oral Care","Toothpaste","Cavity Protection","2025-12-01",true,6.77
-"SKU004","Colgate Kids","Oral Care","Toothpaste","Kids","2025-12-01",true,5.54
-"SKU005","Colgate Fresh Breath","Oral Care","Toothpaste","Fresh Breath","2024-12-01",false,5.54
-"SKU006","Colgate Total Care","Oral Care","Toothpaste","Total Care","2024-12-01",false,5.44
-"SKU007","Colgate Charcoal","Oral Care","Toothpaste","Charcoal","2024-12-01",false,6.46
-"SKU008","Colgate Enamel","Oral Care","Toothpaste","Enamel","2024-12-01",false,6.34
+"SKU001","BrightSmile Max White","Oral Care","Toothpaste","Whitening","2025-12-01",true,6.99
+"SKU002","BrightSmile Sensitive Pro","Oral Care","Toothpaste","Sensitivity","2025-12-01",true,7.49
+"SKU003","BrightSmile Cavity Protection","Oral Care","Toothpaste","Cavity Protection","2025-12-01",true,6.77
+"SKU004","BrightSmile Kids","Oral Care","Toothpaste","Kids","2025-12-01",true,5.54
+"SKU005","BrightSmile Fresh Breath","Oral Care","Toothpaste","Fresh Breath","2024-12-01",false,5.54
+"SKU006","BrightSmile Total Care","Oral Care","Toothpaste","Total Care","2024-12-01",false,5.44
+"SKU007","BrightSmile Charcoal","Oral Care","Toothpaste","Charcoal","2024-12-01",false,6.46
+"SKU008","BrightSmile Enamel","Oral Care","Toothpaste","Enamel","2024-12-01",false,6.34

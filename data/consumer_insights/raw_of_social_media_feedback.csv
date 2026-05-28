@@ -1,52 +1,52 @@
 "POST_ID","PLATFORM","SKU_ID","POST_DATE","CONTENT","SENTIMENT","_LOADED_AT","REGION","NPS_SCORE","SOCIAL_SCORE"
 "POST_TEST003","Twitter","SKU003","2026-02-24 13:00:00.000","Third test - Openflow pipeline working perfectly now!","positive","\N","\N",51,76
-"POST001","Twitter","SKU001","2025-12-05 10:30:00.000","Here in Phoenix, just tried the new Colgate Max White and my teeth already look brighter! Loving this product","\N","2026-02-23 09:24:18.760","Southwest",66,68
-"POST002","Instagram","SKU001","2025-12-06 14:20:00.000","Obsessed with the new Colgate Max White toothpaste! Fellow Arizonans, the mint flavor is perfect for our hot weather - I can see results already","\N","2026-02-23 09:24:18.760","Southwest",45,82
-"POST003","Facebook","SKU001","2025-12-07 09:15:00.000","Finally found a whitening toothpaste that actually works. Everyone in my Texas neighborhood is switching to Colgate Max White!","\N","2026-02-23 09:24:18.760","South Central",59,80
-"POST004","TikTok","SKU001","2025-12-08 16:45:00.000","My dentist in LA asked what Ive been using - Colgate Max White is delivering real results! The bright mint is amazing","\N","2026-02-23 09:24:18.760","West Coast",41,72
-"POST005","Reddit","SKU001","2025-12-09 11:00:00.000","The new Colgate Max White is worth every penny. Here in the Southwest we love the refreshing mint and noticeable whitening!","\N","2026-02-23 09:24:18.760","Southwest",56,69
+"POST001","Twitter","SKU001","2025-12-05 10:30:00.000","Here in Phoenix, just tried the new BrightSmile Max White and my teeth already look brighter! Loving this product","\N","2026-02-23 09:24:18.760","Southwest",66,68
+"POST002","Instagram","SKU001","2025-12-06 14:20:00.000","Obsessed with the new BrightSmile Max White toothpaste! Fellow Arizonans, the mint flavor is perfect for our hot weather - I can see results already","\N","2026-02-23 09:24:18.760","Southwest",45,82
+"POST003","Facebook","SKU001","2025-12-07 09:15:00.000","Finally found a whitening toothpaste that actually works. Everyone in my Texas neighborhood is switching to BrightSmile Max White!","\N","2026-02-23 09:24:18.760","South Central",59,80
+"POST004","TikTok","SKU001","2025-12-08 16:45:00.000","My dentist in LA asked what Ive been using - BrightSmile Max White is delivering real results! The bright mint is amazing","\N","2026-02-23 09:24:18.760","West Coast",41,72
+"POST005","Reddit","SKU001","2025-12-09 11:00:00.000","The new BrightSmile Max White is worth every penny. Here in the Southwest we love the refreshing mint and noticeable whitening!","\N","2026-02-23 09:24:18.760","Southwest",56,69
 "POST_TEST001","Twitter","SKU001","2026-02-24 12:00:00.000","Testing Openflow - this post was loaded automatically by NiFi!","positive","\N","Southeast",41,77
 "POST_TEST004","Twitter","SKU001","2026-02-24 14:00:00.000","Final test - loaded purely by Openflow NiFi!","positive","\N","Southeast",44,77
-"POST006","Twitter","SKU002","2025-12-05 08:20:00.000","Here in Seattle, really disappointed with Colgate Sensitive Pro. The packaging is terrible - tube keeps cracking. #PNW #Seattle","\N","2026-02-23 09:24:18.760","Pacific Northwest",31,32
-"POST007","Instagram","SKU002","2025-12-05 12:30:00.000","Bought Colgate Sensitive Pro from my Seattle Kroger and the tube broke at the seam after just 2 uses. Not buying again","\N","2026-02-23 09:24:18.760","Pacific Northwest",13,29
-"POST008","Facebook","SKU002","2025-12-06 15:00:00.000","Seattle area folks - avoid Colgate Sensitive Pro. The cap doesnt stay closed and it leaked all over my bathroom","\N","2026-02-23 09:24:18.760","Pacific Northwest",29,45
-"POST009","TikTok","SKU002","2025-12-06 18:45:00.000","Wanted to love Colgate Sensitive Pro but the packaging quality is awful. Got mine from Kroger in Seattle and tube cracked immediately","\N","2026-02-23 09:24:18.760","Pacific Northwest",16,32
-"POST010","Reddit","SKU002","2025-12-07 10:15:00.000","Colgate Sensitive Pro packaging fail - the tube split open and leaked all over","\N","2026-02-23 09:24:18.760","Southwest",31,32
-"POST011","Twitter","SKU002","2025-12-07 14:30:00.000","The formula of Colgate Sensitive Pro seems fine but terrible packaging. Tube keeps breaking","\N","2026-02-23 09:24:18.760","Southwest",23,27
-"POST012","Instagram","SKU002","2025-12-08 09:00:00.000","Had to throw away my Colgate Sensitive Pro - tube cracked and leaked. Such a waste","\N","2026-02-23 09:24:18.760","Midwest",35,34
-"POST013","Facebook","SKU002","2025-12-08 16:20:00.000","Anyone else having issues with Colgate Sensitive Pro packaging? My tube broke at the seam","\N","2026-02-23 09:24:18.760","Midwest",27,16
-"POST014","TikTok","SKU002","2025-12-09 11:45:00.000","Colgate Sensitive Pro would be great if the packaging wasnt so cheap. Tube cracked","\N","2026-02-23 09:24:18.760","Northeast",16,27
-"POST015","Reddit","SKU002","2025-12-09 15:00:00.000","The mess from my leaking Colgate Sensitive Pro tube was the last straw. Not repurchasing","\N","2026-02-23 09:24:18.760","Northeast",15,30
+"POST006","Twitter","SKU002","2025-12-05 08:20:00.000","Here in Seattle, really disappointed with BrightSmile Sensitive Pro. The packaging is terrible - tube keeps cracking. #PNW #Seattle","\N","2026-02-23 09:24:18.760","Pacific Northwest",31,32
+"POST007","Instagram","SKU002","2025-12-05 12:30:00.000","Bought BrightSmile Sensitive Pro from my Seattle Kroger and the tube broke at the seam after just 2 uses. Not buying again","\N","2026-02-23 09:24:18.760","Pacific Northwest",13,29
+"POST008","Facebook","SKU002","2025-12-06 15:00:00.000","Seattle area folks - avoid BrightSmile Sensitive Pro. The cap doesnt stay closed and it leaked all over my bathroom","\N","2026-02-23 09:24:18.760","Pacific Northwest",29,45
+"POST009","TikTok","SKU002","2025-12-06 18:45:00.000","Wanted to love BrightSmile Sensitive Pro but the packaging quality is awful. Got mine from Kroger in Seattle and tube cracked immediately","\N","2026-02-23 09:24:18.760","Pacific Northwest",16,32
+"POST010","Reddit","SKU002","2025-12-07 10:15:00.000","BrightSmile Sensitive Pro packaging fail - the tube split open and leaked all over","\N","2026-02-23 09:24:18.760","Southwest",31,32
+"POST011","Twitter","SKU002","2025-12-07 14:30:00.000","The formula of BrightSmile Sensitive Pro seems fine but terrible packaging. Tube keeps breaking","\N","2026-02-23 09:24:18.760","Southwest",23,27
+"POST012","Instagram","SKU002","2025-12-08 09:00:00.000","Had to throw away my BrightSmile Sensitive Pro - tube cracked and leaked. Such a waste","\N","2026-02-23 09:24:18.760","Midwest",35,34
+"POST013","Facebook","SKU002","2025-12-08 16:20:00.000","Anyone else having issues with BrightSmile Sensitive Pro packaging? My tube broke at the seam","\N","2026-02-23 09:24:18.760","Midwest",27,16
+"POST014","TikTok","SKU002","2025-12-09 11:45:00.000","BrightSmile Sensitive Pro would be great if the packaging wasnt so cheap. Tube cracked","\N","2026-02-23 09:24:18.760","Northeast",16,27
+"POST015","Reddit","SKU002","2025-12-09 15:00:00.000","The mess from my leaking BrightSmile Sensitive Pro tube was the last straw. Not repurchasing","\N","2026-02-23 09:24:18.760","Northeast",15,30
 "POST_TEST002","Instagram","SKU002","2026-02-24 12:05:00.000","Another test post to verify the Openflow pipeline is working correctly","positive","\N","Southeast",27,22
 "POST_FINAL_TEST","Instagram","SKU002","2026-02-24 21:30:00.000","All three Openflow pipelines working!","positive","\N","Southeast",28,25
-"POST016","Twitter","SKU002","2025-12-08 09:15:00.000","Got Colgate Sensitive Pro at Kroger in Phoenix and the tube cracked the first time I squeezed it. So frustrating! #Phoenix #AZ","negative","2026-02-26 08:58:10.164","Southwest",18,47
-"POST017","Reddit","SKU002","2025-12-09 14:30:00.000","Anyone else in Phoenix having problems with Colgate Sensitive Pro packaging? Bought from Kroger and tube split at the seam. Total waste of money.","negative","2026-02-26 08:58:10.164","Southwest",34,18
-"POST018","TikTok","SKU002","2025-12-10 18:45:00.000","Phoenix Kroger shoppers beware - Colgate Sensitive Pro has major packaging issues. Mine leaked all over my bathroom counter. Defective batch?","negative","2026-02-26 08:58:10.164","Southwest",15,30
-"POST019","Facebook","SKU002","2025-12-11 11:00:00.000","Disappointed with my Colgate Sensitive Pro from the Phoenix Kroger. The packaging quality is terrible - tube keeps cracking near the cap. Product itself seems fine though.","negative","2026-02-26 08:58:10.164","Southwest",21,24
-"POST020","Twitter","SKU002","2025-12-12 16:20:00.000","Love the formula but hate the packaging. My Colgate Sensitive Pro tube from Scottsdale Kroger broke open. Anyone else in AZ having this issue? #Arizona #Colgate","negative","2026-02-26 08:58:10.164","Southwest",32,27
+"POST016","Twitter","SKU002","2025-12-08 09:15:00.000","Got BrightSmile Sensitive Pro at Kroger in Phoenix and the tube cracked the first time I squeezed it. So frustrating! #Phoenix #AZ","negative","2026-02-26 08:58:10.164","Southwest",18,47
+"POST017","Reddit","SKU002","2025-12-09 14:30:00.000","Anyone else in Phoenix having problems with BrightSmile Sensitive Pro packaging? Bought from Kroger and tube split at the seam. Total waste of money.","negative","2026-02-26 08:58:10.164","Southwest",34,18
+"POST018","TikTok","SKU002","2025-12-10 18:45:00.000","Phoenix Kroger shoppers beware - BrightSmile Sensitive Pro has major packaging issues. Mine leaked all over my bathroom counter. Defective batch?","negative","2026-02-26 08:58:10.164","Southwest",15,30
+"POST019","Facebook","SKU002","2025-12-11 11:00:00.000","Disappointed with my BrightSmile Sensitive Pro from the Phoenix Kroger. The packaging quality is terrible - tube keeps cracking near the cap. Product itself seems fine though.","negative","2026-02-26 08:58:10.164","Southwest",21,24
+"POST020","Twitter","SKU002","2025-12-12 16:20:00.000","Love the formula but hate the packaging. My BrightSmile Sensitive Pro tube from Scottsdale Kroger broke open. Anyone else in AZ having this issue? #Arizona #BrightSmile","negative","2026-02-26 08:58:10.164","Southwest",32,27
 "SM_SW_NEG_24","Instagram","SKU002","2026-01-06 00:00:00.000","Kroger on Camelback Road Sensitive Pro shelf is a mess. All damaged products.","negative","2026-02-26 13:56:28.252","Southwest",35,37
-"SM_SW_NEG_9","Facebook","SKU002","2026-02-15 00:00:00.000","Why does every Sensitive Pro I buy in Arizona have packaging issues? Fix this @Colgate","negative","2026-02-26 13:56:28.252","Southwest",10,25
+"SM_SW_NEG_9","Facebook","SKU002","2026-02-15 00:00:00.000","Why does every Sensitive Pro I buy in Arizona have packaging issues? Fix this @BrightSmile","negative","2026-02-26 13:56:28.252","Southwest",10,25
 "SM_SW_NEG_8","TikTok","SKU002","2025-12-31 00:00:00.000","Returned another Sensitive Pro today. Southwest stores consistently have defective tubes.","negative","2026-02-26 13:56:28.252","Southwest",18,45
-"SM_SW_NEG_2","Reddit","SKU002","2026-02-03 00:00:00.000","The packaging quality of Sensitive Pro in AZ is embarrassing. @Colgate do better.","negative","2026-02-26 13:56:28.252","Southwest",28,40
+"SM_SW_NEG_2","Reddit","SKU002","2026-02-03 00:00:00.000","The packaging quality of Sensitive Pro in AZ is embarrassing. @BrightSmile do better.","negative","2026-02-26 13:56:28.252","Southwest",28,40
 "SM_SW_NEG_14","Twitter","SKU002","2026-01-15 00:00:00.000","Sensitive Pro cap threading is terrible. Does not screw on tight. Arizona problem?","negative","2026-02-26 13:56:28.252","Southwest",32,15
 "SM_SW_NEG_4","Instagram","SKU002","2026-01-17 00:00:00.000","The packaging on Sensitive Pro is the worst. Mesa store had multiple damaged tubes on shelf.","negative","2026-02-26 13:56:28.252","Southwest",21,31
-"SM_SW_NEG_23","Facebook","SKU002","2026-02-16 00:00:00.000","Southwest region Colgate supply chain has issues. Every Sensitive Pro tube I buy is damaged.","negative","2026-02-26 13:56:28.252","Southwest",-1,17
-"SM_SW_NEG_10","TikTok","SKU002","2026-01-09 00:00:00.000","Cap fell off my Sensitive Pro in my purse. Thanks for the mess Colgate. Fix your packaging!","negative","2026-02-26 13:56:28.252","Southwest",14,41
+"SM_SW_NEG_23","Facebook","SKU002","2026-02-16 00:00:00.000","Southwest region BrightSmile supply chain has issues. Every Sensitive Pro tube I buy is damaged.","negative","2026-02-26 13:56:28.252","Southwest",-1,17
+"SM_SW_NEG_10","TikTok","SKU002","2026-01-09 00:00:00.000","Cap fell off my Sensitive Pro in my purse. Thanks for the mess BrightSmile. Fix your packaging!","negative","2026-02-26 13:56:28.252","Southwest",14,41
 "SM_SW_NEG_21","Reddit","SKU002","2025-12-28 00:00:00.000","Love the Sensitive Pro formula but the packaging in Southwest stores is awful. Tube cracked on me.","negative","2026-02-26 13:56:28.252","Southwest",8,18
 "SM_SW_NEG_16","Twitter","SKU002","2026-01-07 00:00:00.000","Sensitive Pro leaking everywhere in my cabinet. The Phoenix batch seems defective.","negative","2026-02-26 13:56:28.252","Southwest",4,30
 "SM_SW_NEG_1","Instagram","SKU002","2026-01-02 00:00:00.000","Phoenix area needs better Sensitive Pro quality control. Fed up with packaging issues.","negative","2026-02-26 13:56:28.252","Southwest",26,28
-"SM_SW_NEG_15","Facebook","SKU002","2026-02-25 00:00:00.000","Gilbert Kroger Sensitive Pro packaging problems continue. When will Colgate address this?","negative","2026-02-26 13:56:28.252","Southwest",10,43
+"SM_SW_NEG_15","Facebook","SKU002","2026-02-25 00:00:00.000","Gilbert Kroger Sensitive Pro packaging problems continue. When will BrightSmile address this?","negative","2026-02-26 13:56:28.252","Southwest",10,43
 "SM_SW_NEG_13","TikTok","SKU002","2026-02-12 00:00:00.000","Sensitive Pro tube split at the seam after one week. Phoenix Kroger product quality is poor.","negative","2026-02-26 13:56:28.252","Southwest",34,21
 "SM_SW_NEG_20","Reddit","SKU002","2026-02-16 00:00:00.000","Anyone know if Sensitive Pro packaging issues are specific to Arizona? Keep having problems.","negative","2026-02-26 13:56:28.252","Southwest",36,13
 "SM_SW_NEG_12","Twitter","SKU002","2026-01-22 00:00:00.000","Anyone else in Phoenix area having issues with Sensitive Pro packaging? Cap keeps falling off mine.","negative","2026-02-26 13:56:28.252","Southwest",22,36
 "SM_SW_NEG_19","Instagram","SKU002","2026-02-01 00:00:00.000","Glendale Kroger Sensitive Pro all had damaged packaging. Had to drive to three stores.","negative","2026-02-26 13:56:28.252","Southwest",36,14
 "SM_SW_NEG_22","Facebook","SKU002","2026-01-15 00:00:00.000","Had to return Sensitive Pro AGAIN due to packaging. Southwest stores need better QC.","negative","2026-02-26 13:56:28.252","Southwest",33,13
-"SM_SW_NEG_18","TikTok","SKU002","2026-01-14 00:00:00.000","Third tube of Sensitive Pro from my AZ store with the same cap problem. @Colgate please fix this!","negative","2026-02-26 13:56:28.252","Southwest",16,13
+"SM_SW_NEG_18","TikTok","SKU002","2026-01-14 00:00:00.000","Third tube of Sensitive Pro from my AZ store with the same cap problem. @BrightSmile please fix this!","negative","2026-02-26 13:56:28.252","Southwest",16,13
 "SM_SW_NEG_7","Reddit","SKU002","2026-02-18 00:00:00.000","The seal on my Sensitive Pro was broken when I bought it. Chandler store has issues.","negative","2026-02-26 13:56:28.252","Southwest",24,13
 "SM_SW_NEG_11","Twitter","SKU002","2026-02-19 00:00:00.000","My Sensitive Pro tube ballooned in the Arizona heat. Packaging not designed for SW climate?","negative","2026-02-26 13:56:28.252","Southwest",34,19
 "SM_SW_NEG_5","Instagram","SKU002","2026-01-11 00:00:00.000","Bought Sensitive Pro in Tempe and the tube was already leaking in the box. So frustrating!","negative","2026-02-26 13:56:28.252","Southwest",18,28
 "SM_SW_NEG_3","Facebook","SKU002","2026-01-05 00:00:00.000","Love what Sensitive Pro does for my teeth but HATE the packaging. Especially in SW stores.","negative","2026-02-26 13:56:28.252","Southwest",34,20
-"SM_SW_NEG_6","TikTok","SKU002","2026-01-13 00:00:00.000","Scottsdale Kroger Sensitive Pro products are always damaged. Quality control issue @Colgate?","negative","2026-02-26 13:56:28.252","Southwest",21,39
+"SM_SW_NEG_6","TikTok","SKU002","2026-01-13 00:00:00.000","Scottsdale Kroger Sensitive Pro products are always damaged. Quality control issue @BrightSmile?","negative","2026-02-26 13:56:28.252","Southwest",21,39
 "SM_SW_NEG_17","Reddit","SKU002","2026-01-03 00:00:00.000","Sensitive Pro cap is defective. Third tube in a row from Phoenix store. Unacceptable.","negative","2026-02-26 13:56:28.252","Southwest",18,15
 "SM_SW_NEG_25","Twitter","SKU002","2026-02-02 00:00:00.000","Phoenix Kroger Sensitive Pro packaging is TERRIBLE. Cap never closes right. Leaked all over my bag 😤","negative","2026-02-26 13:56:28.252","Southwest",25,25
 "SM_POS_9","Reddit","SKU002","2026-02-15 00:00:00.000","No more sensitivity with hot coffee thanks to Sensitive Pro ☕️","positive","2026-02-26 13:56:28.252","Northeast",24,32
@@ -75,72 +75,72 @@
 "SM_MW_9","Reddit","SKU001","2026-02-12 00:00:00.000","Max White removed years of coffee stains. My dentist was impressed!","positive","2026-02-26 13:56:28.252","Southwest",58,68
 "SM_MW_14","Instagram","SKU001","2026-01-16 00:00:00.000","Max White before/after is dramatic. So happy I switched!","positive","2026-02-26 13:56:28.252","Midwest",63,77
 "SM_GEN_14","Facebook","SKU004","2026-02-10 00:00:00.000","My dentist is impressed with my checkups since using Cavity Protection.","positive","2026-02-26 13:56:28.252","Midwest",40,68
-"SM_GEN_10","Twitter","SKU003","2026-01-02 00:00:00.000","Kids strawberry Colgate is a hit in our house. No more brushing battles!","positive","2026-02-26 13:56:28.252","Northeast",47,63
-"SM_GEN_5","TikTok","SKU005","2026-02-23 00:00:00.000","Colgate Total Care is the standard. Everything else falls short.","positive","2026-02-26 13:56:28.252","Southeast",50,34
-"SM_GEN_12","Twitter","SKU008","2026-02-20 00:00:00.000","Colgate Charcoal detox feeling is amazing. Mouth feels so clean!","positive","2026-02-26 13:56:28.252","West Coast",36,31
-"SM_GEN_11","Facebook","SKU006","2026-02-10 00:00:00.000","Fresh Breath Colgate keeps me confident all day. Love it!","positive","2026-02-26 13:56:28.252","South Central",30,53
-"SM_GEN_1","Reddit","SKU003","2026-01-06 00:00:00.000","My son loves Colgate Kids. The flavor makes brushing fun for him.","positive","2026-02-26 13:56:28.252","Pacific Northwest",56,70
-"SM_GEN_9","TikTok","SKU003","2025-12-28 00:00:00.000","Colgate Kids made my daughter actually WANT to brush. Parent win! 🎉","positive","2026-02-26 13:56:28.252","Southwest",41,64
+"SM_GEN_10","Twitter","SKU003","2026-01-02 00:00:00.000","Kids strawberry BrightSmile is a hit in our house. No more brushing battles!","positive","2026-02-26 13:56:28.252","Northeast",47,63
+"SM_GEN_5","TikTok","SKU005","2026-02-23 00:00:00.000","BrightSmile Total Care is the standard. Everything else falls short.","positive","2026-02-26 13:56:28.252","Southeast",50,34
+"SM_GEN_12","Twitter","SKU008","2026-02-20 00:00:00.000","BrightSmile Charcoal detox feeling is amazing. Mouth feels so clean!","positive","2026-02-26 13:56:28.252","West Coast",36,31
+"SM_GEN_11","Facebook","SKU006","2026-02-10 00:00:00.000","Fresh Breath BrightSmile keeps me confident all day. Love it!","positive","2026-02-26 13:56:28.252","South Central",30,53
+"SM_GEN_1","Reddit","SKU003","2026-01-06 00:00:00.000","My son loves BrightSmile Kids. The flavor makes brushing fun for him.","positive","2026-02-26 13:56:28.252","Pacific Northwest",56,70
+"SM_GEN_9","TikTok","SKU003","2025-12-28 00:00:00.000","BrightSmile Kids made my daughter actually WANT to brush. Parent win! 🎉","positive","2026-02-26 13:56:28.252","Southwest",41,64
 "SM_GEN_6","Instagram","SKU007","2026-01-06 00:00:00.000","Enamel Health is worth it. My teeth feel stronger and look better.","positive","2026-02-26 13:56:28.252","Midwest",41,40
-"SM_GEN_3","Twitter","SKU006","2026-01-13 00:00:00.000","Colgate Fresh Breath is the only toothpaste that actually lasts all day.","positive","2026-02-26 13:56:28.252","Northeast",22,36
-"SM_GEN_4","TikTok","SKU008","2026-01-19 00:00:00.000","The Charcoal Colgate is surprisingly effective. Fresh and clean feeling!","positive","2026-02-26 13:56:28.252","Southeast",34,64
+"SM_GEN_3","Twitter","SKU006","2026-01-13 00:00:00.000","BrightSmile Fresh Breath is the only toothpaste that actually lasts all day.","positive","2026-02-26 13:56:28.252","Northeast",22,36
+"SM_GEN_4","TikTok","SKU008","2026-01-19 00:00:00.000","The Charcoal BrightSmile is surprisingly effective. Fresh and clean feeling!","positive","2026-02-26 13:56:28.252","Southeast",34,64
 "SM_GEN_2","Instagram","SKU005","2026-01-19 00:00:00.000","Total Care is our family go-to. Covers all bases in one tube!","positive","2026-02-26 13:56:28.252","West Coast",31,35
-"SM_GEN_15","Facebook","SKU006","2026-02-01 00:00:00.000","Morning fresh breath all day with Colgate Fresh Breath. Essential!","positive","2026-02-26 13:56:28.252","South Central",44,40
-"SM_GEN_8","Reddit","SKU004","2026-01-22 00:00:00.000","Cavity Protection has kept my cavity-prone family healthy. Thank you Colgate!","positive","2026-02-26 13:56:28.252","Pacific Northwest",50,73
-"SM_GEN_7","Instagram","SKU007","2026-01-01 00:00:00.000","Colgate Enamel Health strengthened my teeth noticeably. Great product!","positive","2026-02-26 13:56:28.252","Southwest",34,64
-"SM_GEN_13","Reddit","SKU004","2026-02-16 00:00:00.000","Zero cavities since switching to Colgate Cavity Protection. Works!","positive","2026-02-26 13:56:28.252","Midwest",32,64
-"SM_NEU_15","Facebook","SKU008","2026-02-02 00:00:00.000","Does Colgate Charcoal actually work or is it marketing?","neutral","2026-02-26 13:56:28.252","Midwest",23,56
-"SM_NEU_13","Twitter","SKU001","2026-01-17 00:00:00.000","Colgate vs Crest for whitening? Considering Max White.","neutral","2026-02-26 13:56:28.252","Northeast",63,72
-"SM_NEU_1","Twitter","SKU002","2026-02-11 00:00:00.000","Best Colgate product for sensitive teeth? Need recommendations.","neutral","2026-02-26 13:56:28.252","Southeast",32,25
+"SM_GEN_15","Facebook","SKU006","2026-02-01 00:00:00.000","Morning fresh breath all day with BrightSmile Fresh Breath. Essential!","positive","2026-02-26 13:56:28.252","South Central",44,40
+"SM_GEN_8","Reddit","SKU004","2026-01-22 00:00:00.000","Cavity Protection has kept my cavity-prone family healthy. Thank you BrightSmile!","positive","2026-02-26 13:56:28.252","Pacific Northwest",50,73
+"SM_GEN_7","Instagram","SKU007","2026-01-01 00:00:00.000","BrightSmile Enamel Health strengthened my teeth noticeably. Great product!","positive","2026-02-26 13:56:28.252","Southwest",34,64
+"SM_GEN_13","Reddit","SKU004","2026-02-16 00:00:00.000","Zero cavities since switching to BrightSmile Cavity Protection. Works!","positive","2026-02-26 13:56:28.252","Midwest",32,64
+"SM_NEU_15","Facebook","SKU008","2026-02-02 00:00:00.000","Does BrightSmile Charcoal actually work or is it marketing?","neutral","2026-02-26 13:56:28.252","Midwest",23,56
+"SM_NEU_13","Twitter","SKU001","2026-01-17 00:00:00.000","BrightSmile vs Crest for whitening? Considering Max White.","neutral","2026-02-26 13:56:28.252","Northeast",63,72
+"SM_NEU_1","Twitter","SKU002","2026-02-11 00:00:00.000","Best BrightSmile product for sensitive teeth? Need recommendations.","neutral","2026-02-26 13:56:28.252","Southeast",32,25
 "SM_NEU_12","TikTok","SKU001","2026-01-24 00:00:00.000","How long before Max White shows results? Just started.","neutral","2026-02-26 13:56:28.252","West Coast",61,62
 "SM_NEU_3","Reddit","SKU004","2026-02-22 00:00:00.000","Cavity Protection fluoride level? Is it safe for daily use?","neutral","2026-02-26 13:56:28.252","South Central",41,59
-"SM_NEU_2","Reddit","SKU006","2026-02-11 00:00:00.000","Best Colgate for bad breath? Fresh Breath or Total Care?","neutral","2026-02-26 13:56:28.252","Pacific Northwest",26,54
-"SM_NEU_7","Instagram","SKU002","2026-01-03 00:00:00.000","Has anyone tried the new Colgate Sensitive Pro? Looking for reviews.","neutral","2026-02-26 13:56:28.252","Southwest",17,27
+"SM_NEU_2","Reddit","SKU006","2026-02-11 00:00:00.000","Best BrightSmile for bad breath? Fresh Breath or Total Care?","neutral","2026-02-26 13:56:28.252","Pacific Northwest",26,54
+"SM_NEU_7","Instagram","SKU002","2026-01-03 00:00:00.000","Has anyone tried the new BrightSmile Sensitive Pro? Looking for reviews.","neutral","2026-02-26 13:56:28.252","Southwest",17,27
 "SM_NEU_11","Instagram","SKU002","2026-02-18 00:00:00.000","Sensitive Pro or regular sensitive toothpaste? Differences?","neutral","2026-02-26 13:56:28.252","Midwest",36,26
 "SM_NEU_14","Twitter","SKU001","2026-02-24 00:00:00.000","Thinking about switching to Max White. Is it worth it?","neutral","2026-02-26 13:56:28.252","Northeast",52,60
-"SM_NEU_4","Reddit","SKU007","2026-02-11 00:00:00.000","Which Colgate is best for enamel repair? My dentist suggested it.","neutral","2026-02-26 13:56:28.252","Southeast",44,57
+"SM_NEU_4","Reddit","SKU007","2026-02-11 00:00:00.000","Which BrightSmile is best for enamel repair? My dentist suggested it.","neutral","2026-02-26 13:56:28.252","Southeast",44,57
 "SM_NEU_10","Facebook","SKU001","2026-01-15 00:00:00.000","Max White vs whitening strips? Which is more effective?","neutral","2026-02-26 13:56:28.252","West Coast",62,80
-"SM_NEU_6","TikTok","SKU005","2026-01-19 00:00:00.000","Looking for fluoride-free Colgate options. Do they exist?","neutral","2026-02-26 13:56:28.252","South Central",47,68
-"SM_NEU_9","Facebook","SKU005","2026-02-21 00:00:00.000","Colgate subscription service - is it worth signing up?","neutral","2026-02-26 13:56:28.252","Pacific Northwest",55,66
-"SM_NEU_8","Instagram","SKU003","2026-01-17 00:00:00.000","Colgate Kids age range? When should kids switch to adult?","neutral","2026-02-26 13:56:28.252","Southwest",41,73
-"SM_NEU_5","TikTok","SKU005","2026-02-09 00:00:00.000","Any Colgate products good for braces? Asking for my teen.","neutral","2026-02-26 13:56:28.252","Midwest",56,32
+"SM_NEU_6","TikTok","SKU005","2026-01-19 00:00:00.000","Looking for fluoride-free BrightSmile options. Do they exist?","neutral","2026-02-26 13:56:28.252","South Central",47,68
+"SM_NEU_9","Facebook","SKU005","2026-02-21 00:00:00.000","BrightSmile subscription service - is it worth signing up?","neutral","2026-02-26 13:56:28.252","Pacific Northwest",55,66
+"SM_NEU_8","Instagram","SKU003","2026-01-17 00:00:00.000","BrightSmile Kids age range? When should kids switch to adult?","neutral","2026-02-26 13:56:28.252","Southwest",41,73
+"SM_NEU_5","TikTok","SKU005","2026-02-09 00:00:00.000","Any BrightSmile products good for braces? Asking for my teen.","neutral","2026-02-26 13:56:28.252","Midwest",56,32
 "SM_EXT_25","Reddit","SKU001","2026-01-28 00:00:00.000","Max White results are better than expensive whitening treatments!","positive","2026-02-26 13:56:57.089","Midwest",62,67
 "SM_EXT_20","TikTok","SKU006","2026-02-22 00:00:00.000","Fresh Breath vs Total Care for all day fresh breath?","neutral","2026-02-26 13:56:57.089","Northeast",30,51
 "SM_EXT_29","Twitter","SKU001","2026-01-29 00:00:00.000","Max White with sensitive teeth - good combo or no?","neutral","2026-02-26 13:56:57.089","Southeast",62,76
-"SM_EXT_12","Facebook","SKU004","2026-01-13 00:00:00.000","Cavity free checkup thanks to Colgate Cavity Protection! 🦷","positive","2026-02-26 13:56:57.089","West Coast",48,56
-"SM_EXT_40","TikTok","SKU002","2026-02-24 00:00:00.000","AZ Colgate shoppers - anyone else notice Sensitive Pro packaging getting worse?","negative","2026-02-26 13:56:57.089","Southwest",4,41
-"SM_EXT_32","Reddit","SKU005","2026-01-29 00:00:00.000","Best Colgate for teens with braces? Need recommendations.","neutral","2026-02-26 13:56:57.089","Pacific Northwest",53,43
+"SM_EXT_12","Facebook","SKU004","2026-01-13 00:00:00.000","Cavity free checkup thanks to BrightSmile Cavity Protection! 🦷","positive","2026-02-26 13:56:57.089","West Coast",48,56
+"SM_EXT_40","TikTok","SKU002","2026-02-24 00:00:00.000","AZ BrightSmile shoppers - anyone else notice Sensitive Pro packaging getting worse?","negative","2026-02-26 13:56:57.089","Southwest",4,41
+"SM_EXT_32","Reddit","SKU005","2026-01-29 00:00:00.000","Best BrightSmile for teens with braces? Need recommendations.","neutral","2026-02-26 13:56:57.089","Pacific Northwest",53,43
 "SM_EXT_11","Facebook","SKU002","2025-12-29 00:00:00.000","Bought Sensitive Pro at Phoenix Target and it was already leaking. Return trip.","negative","2026-02-26 13:56:57.089","Southwest",18,17
-"SM_EXT_28","Reddit","SKU008","2026-01-12 00:00:00.000","Colgate Charcoal gives the cleanest feeling. Obsessed!","positive","2026-02-26 13:56:57.089","Midwest",35,39
+"SM_EXT_28","Reddit","SKU008","2026-01-12 00:00:00.000","BrightSmile Charcoal gives the cleanest feeling. Obsessed!","positive","2026-02-26 13:56:57.089","Midwest",35,39
 "SM_EXT_14","Twitter","SKU002","2026-01-29 00:00:00.000","Sensitive Pro gave me back my love of ice cream! 🍨","positive","2026-02-26 13:56:57.089","Northeast",18,13
-"SM_EXT_4","Twitter","SKU003","2026-01-31 00:00:00.000","Kids Colgate strawberry flavor = no more toothbrush battles!","positive","2026-02-26 13:56:57.089","Southeast",61,65
+"SM_EXT_4","Twitter","SKU003","2026-01-31 00:00:00.000","Kids BrightSmile strawberry flavor = no more toothbrush battles!","positive","2026-02-26 13:56:57.089","Southeast",61,65
 "SM_EXT_31","Reddit","SKU002","2026-02-10 00:00:00.000","Love Sensitive Pro but HATE the packaging. Every tube from SW leaks.","negative","2026-02-26 13:56:57.089","Southwest",5,13
 "SM_EXT_37","Instagram","SKU001","2026-01-28 00:00:00.000","Max White visible results after just one week. Incredible!","positive","2026-02-26 13:56:57.089","South Central",49,71
-"SM_EXT_1","Facebook","SKU006","2026-01-09 00:00:00.000","Fresh Breath Colgate lasts through my entire workday. Amazing!","positive","2026-02-26 13:56:57.089","Pacific Northwest",39,37
+"SM_EXT_1","Facebook","SKU006","2026-01-09 00:00:00.000","Fresh Breath BrightSmile lasts through my entire workday. Amazing!","positive","2026-02-26 13:56:57.089","Pacific Northwest",39,37
 "SM_EXT_24","Instagram","SKU005","2026-02-13 00:00:00.000","Total Care is the Swiss Army knife of toothpaste. Does it all!","positive","2026-02-26 13:56:57.089","Southwest",46,42
 "SM_EXT_36","Instagram","SKU007","2026-01-14 00:00:00.000","Enamel Health strengthened my worn enamel. Dentist confirmed!","positive","2026-02-26 13:56:57.089","Midwest",34,53
 "SM_EXT_9","Reddit","SKU002","2026-02-16 00:00:00.000","Sensitive Pro tube exploded in the Arizona heat. Bad packaging design.","negative","2026-02-26 13:56:57.089","Southwest",22,39
 "SM_EXT_10","Reddit","SKU004","2026-02-08 00:00:00.000","Cavity Protection fluoride content - higher or lower than others?","neutral","2026-02-26 13:56:57.089","Southeast",36,60
-"SM_EXT_21","TikTok","SKU002","2026-01-21 00:00:00.000","Sensitive Pro cap came off in my gym bag. Toothpaste everywhere. Thanks @Colgate 🙄","negative","2026-02-26 13:56:57.089","Southwest",5,25
-"SM_EXT_33","TikTok","SKU003","2026-01-07 00:00:00.000","Kids absolutely love their Colgate toothpaste. Brushing is fun now!","positive","2026-02-26 13:56:57.089","South Central",53,70
-"SM_EXT_6","TikTok","SKU001","2026-01-29 00:00:00.000","Max White has me smiling in every selfie now! 📸 #ColgateFan","positive","2026-02-26 13:56:57.089","Pacific Northwest",59,78
-"SM_EXT_19","TikTok","SKU008","2026-02-22 00:00:00.000","Charcoal Colgate aesthetic and effectiveness combo is perfect!","positive","2026-02-26 13:56:57.089","Southwest",50,54
+"SM_EXT_21","TikTok","SKU002","2026-01-21 00:00:00.000","Sensitive Pro cap came off in my gym bag. Toothpaste everywhere. Thanks @BrightSmile 🙄","negative","2026-02-26 13:56:57.089","Southwest",5,25
+"SM_EXT_33","TikTok","SKU003","2026-01-07 00:00:00.000","Kids absolutely love their BrightSmile toothpaste. Brushing is fun now!","positive","2026-02-26 13:56:57.089","South Central",53,70
+"SM_EXT_6","TikTok","SKU001","2026-01-29 00:00:00.000","Max White has me smiling in every selfie now! 📸 #BrightSmileFan","positive","2026-02-26 13:56:57.089","Pacific Northwest",59,78
+"SM_EXT_19","TikTok","SKU008","2026-02-22 00:00:00.000","Charcoal BrightSmile aesthetic and effectiveness combo is perfect!","positive","2026-02-26 13:56:57.089","Southwest",50,54
 "SM_EXT_35","Twitter","SKU007","2026-02-12 00:00:00.000","Enamel Health made a real difference at my dental checkup!","positive","2026-02-26 13:56:57.089","Midwest",44,53
-"SM_EXT_23","Facebook","SKU005","2026-02-04 00:00:00.000","My whole family uses Colgate Total Care. Best all-around option!","positive","2026-02-26 13:56:57.089","Northeast",30,40
+"SM_EXT_23","Facebook","SKU005","2026-02-04 00:00:00.000","My whole family uses BrightSmile Total Care. Best all-around option!","positive","2026-02-26 13:56:57.089","Northeast",30,40
 "SM_EXT_13","Instagram","SKU001","2026-01-28 00:00:00.000","Max White is the only toothpaste I trust for whitening.","positive","2026-02-26 13:56:57.089","Southeast",47,61
-"SM_EXT_17","Facebook","SKU006","2026-01-05 00:00:00.000","Fresh Breath Colgate is my interview day essential. Confidence boost!","positive","2026-02-26 13:56:57.089","West Coast",45,32
-"SM_EXT_30","Instagram","SKU003","2026-01-07 00:00:00.000","Colgate Kids transition age? When to switch to adult paste?","neutral","2026-02-26 13:56:57.089","South Central",58,66
-"SM_EXT_38","Twitter","SKU008","2026-02-01 00:00:00.000","Is Colgate Charcoal safe for daily use? Researching options.","neutral","2026-02-26 13:56:57.089","Pacific Northwest",32,52
+"SM_EXT_17","Facebook","SKU006","2026-01-05 00:00:00.000","Fresh Breath BrightSmile is my interview day essential. Confidence boost!","positive","2026-02-26 13:56:57.089","West Coast",45,32
+"SM_EXT_30","Instagram","SKU003","2026-01-07 00:00:00.000","BrightSmile Kids transition age? When to switch to adult paste?","neutral","2026-02-26 13:56:57.089","South Central",58,66
+"SM_EXT_38","Twitter","SKU008","2026-02-01 00:00:00.000","Is BrightSmile Charcoal safe for daily use? Researching options.","neutral","2026-02-26 13:56:57.089","Pacific Northwest",32,52
 "SM_EXT_15","Reddit","SKU001","2026-02-15 00:00:00.000","Anyone compare Max White to other whitening brands? Results?","neutral","2026-02-26 13:56:57.089","Southwest",43,82
 "SM_EXT_18","Facebook","SKU002","2026-02-25 00:00:00.000","The Sensitive Pro quality in Southwest region is unacceptable. Fix it!","negative","2026-02-26 13:56:57.089","Southwest",28,32
 "SM_EXT_8","Twitter","SKU002","2026-01-08 00:00:00.000","Sensitive Pro relief is instant. Best sensitive toothpaste ever!","positive","2026-02-26 13:56:57.089","Northeast",26,29
 "SM_EXT_7","Facebook","SKU001","2026-02-08 00:00:00.000","Max White confidence boost is real. Smiling more every day!","positive","2026-02-26 13:56:57.089","Southeast",44,69
-"SM_EXT_27","Instagram","SKU002","2026-02-24 00:00:00.000","Third refund request for Sensitive Pro packaging issues. @Colgate please respond.","negative","2026-02-26 13:56:57.089","Southwest",19,24
-"SM_EXT_39","Facebook","SKU005","2026-01-24 00:00:00.000","Looking for eco-friendly Colgate options. Any available?","neutral","2026-02-26 13:56:57.089","South Central",39,67
+"SM_EXT_27","Instagram","SKU002","2026-02-24 00:00:00.000","Third refund request for Sensitive Pro packaging issues. @BrightSmile please respond.","negative","2026-02-26 13:56:57.089","Southwest",19,24
+"SM_EXT_39","Facebook","SKU005","2026-01-24 00:00:00.000","Looking for eco-friendly BrightSmile options. Any available?","neutral","2026-02-26 13:56:57.089","South Central",39,67
 "SM_EXT_5","Instagram","SKU002","2026-02-23 00:00:00.000","Phoenix grocery stores need to check Sensitive Pro inventory. All damaged!","negative","2026-02-26 13:56:57.089","Southwest",3,46
 "SM_EXT_2","Reddit","SKU002","2026-02-01 00:00:00.000","Sensitive Pro vs prescription sensitive paste - worth it?","neutral","2026-02-26 13:56:57.089","Southwest",0,39
 "SM_EXT_16","Twitter","SKU002","2026-02-02 00:00:00.000","Mesa Walmart Sensitive Pro shelf had 5 damaged tubes. This is a pattern.","negative","2026-02-26 13:56:57.089","Southwest",31,14
 "SM_EXT_34","Instagram","SKU002","2026-02-04 00:00:00.000","Sensitive Pro from my Northeast store works perfectly. No issues!","positive","2026-02-26 13:56:57.089","Northeast",4,25
 "SM_EXT_26","Twitter","SKU002","2026-01-22 00:00:00.000","Sensitive Pro cap design is flawed. Multiple tubes same problem in AZ.","negative","2026-02-26 13:56:57.089","Southwest",33,42
-"SM_EXT_22","TikTok","SKU007","2026-01-21 00:00:00.000","Colgate Enamel vs Sensodyne Pronamel? Comparisons?","neutral","2026-02-26 13:56:57.089","West Coast",41,41
+"SM_EXT_22","TikTok","SKU007","2026-01-21 00:00:00.000","BrightSmile Enamel vs Sensodyne Pronamel? Comparisons?","neutral","2026-02-26 13:56:57.089","West Coast",41,41
 "SM_EXT_3","TikTok","SKU004","2026-01-06 00:00:00.000","Cavity Protection saved my sons teeth. Dentist is impressed!","positive","2026-02-26 13:56:57.089","South Central",34,52

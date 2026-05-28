@@ -571,6 +571,8 @@ See `openflow/README.md` in this repo for detailed PG architecture and schema ma
 
 **Agent invocation fails with "Unknown function"**: Use `SNOWFLAKE.CORTEX.DATA_AGENT_RUN('<fqn>', $${ ... }$$)` — not `SNOWFLAKE.CORTEX.AGENT()`.
 
+**Agent error 399513 "not authorized for the current role"**: The agent exists but the role lacks USAGE privilege. Fix: `USE ROLE ACCOUNTADMIN; GRANT USAGE ON AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT TO ROLE SKU_LAUNCH_ROLE; GRANT USAGE ON AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT TO ROLE PUBLIC;`
+
 **SPCS 403 / Auth error**: The React app reads `/snowflake/session/token` for SPCS OAuth. Ensure the EAI (SKU_LAUNCH_EAI) allows egress to the correct account host. Update network rule: `ALTER NETWORK RULE SKU_LAUNCH.INVENTORY.SKU_LAUNCH_EGRESS_RULE SET VALUE_LIST = ('<your-account>.snowflakecomputing.com:443');`
 
 **SPCS endpoint requires biometric/passkey in browser**: Public SPCS endpoints use Snowflake OAuth which requires passkey verification. This is expected behavior.
