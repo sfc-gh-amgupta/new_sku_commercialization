@@ -275,18 +275,19 @@ Run these verification queries and present results as a pass/fail table:
 ```sql
 USE DATABASE SKU_LAUNCH;
 
-SELECT 'Tables' AS category, COUNT(*) AS found, 19 AS expected
+SELECT 'Tables' AS category, COUNT(*) AS found, 29 AS expected
 FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_CATALOG = 'SKU_LAUNCH' AND TABLE_TYPE = 'BASE TABLE'
   AND TABLE_SCHEMA NOT IN ('INFORMATION_SCHEMA')
 UNION ALL
-SELECT 'Dynamic Tables', COUNT(*), 10
-FROM INFORMATION_SCHEMA.TABLES
-WHERE TABLE_CATALOG = 'SKU_LAUNCH' AND TABLE_TYPE = 'DYNAMIC TABLE'
-UNION ALL
 SELECT 'Views', COUNT(*), 1
 FROM INFORMATION_SCHEMA.VIEWS
 WHERE TABLE_CATALOG = 'SKU_LAUNCH' AND TABLE_SCHEMA NOT IN ('INFORMATION_SCHEMA');
+```
+
+```sql
+SHOW DYNAMIC TABLES IN DATABASE SKU_LAUNCH;
+-- Expected: 10 dynamic tables
 ```
 
 ```sql
@@ -438,23 +439,40 @@ SELECT SNOWFLAKE.CORTEX.DATA_AGENT_RUN(
 
 ---
 
-## Step 10 (Optional): Deploy Openflow Ingestion Pipelines
+## Step 10: Deploy Openflow Ingestion Pipelines
 
-This step sets up 5 Openflow process groups that simulate incremental data ingestion into the RAW tables. **Requires Openflow to be enabled on the target account.**
+**ALWAYS attempt this step** after Step 9. Do NOT ask the user — just try it. If Openflow is unavailable, report it in the final summary and move on.
 
 ### 10a: Check Openflow Availability
 
 ```sql
-SHOW OPENFLOW DEPLOYMENTS;
+SHOW OPENFLOW RUNTIMES IN ACCOUNT;
 ```
 
 | Result | Action |
 |--------|--------|
-| Returns rows | Openflow is enabled — continue to 10b |
-| Syntax error | Try legacy: `SHOW OPENFLOW DATA PLANE INTEGRATIONS;` |
-| Empty / permission error | Openflow not enabled — tell user: "Openflow is not enabled on this account. To enable: Snowsight > Ingestion > Openflow (requires ORGADMIN to accept Terms of Service). Then create a deployment and runtime via the UI. After that, re-run this step." |
+| Returns rows | Openflow is available — continue to 10b |
+| Error or empty | Openflow not available — skip to 10d (graceful skip) |
 
-If Openflow is not available, **skip this step** — the demo works without it since all RAW tables are pre-populated with seed data.
+### 10d: Graceful Skip (Openflow Not Available)
+
+If Openflow is not available, include this in your final output to the user:
+
+---
+
+**Openflow Status: NOT DEPLOYED**
+
+The demo app and agent are fully functional without Openflow. Openflow adds live incremental data ingestion simulation (new POS data, inventory updates, social feedback streaming into RAW tables).
+
+To enable Openflow later:
+1. Go to Snowsight > Ingestion > Openflow
+2. Accept Terms of Service (requires ORGADMIN)
+3. Create a deployment and runtime (Small node type, assign a role with INSERT on SKU_LAUNCH tables)
+4. Then run this prompt in CoCo: `/deploy_sku_launch_product_launch deploy openflow pipelines for SKU Launch demo`
+
+---
+
+Then END the deployment. Do not ask any further questions.
 
 ### 10b: Check for Existing Runtime
 
@@ -546,6 +564,7 @@ See `openflow/README.md` in this repo for detailed PG architecture and schema ma
 - After Step 4: before Docker build (confirm SQL infrastructure is set up)
 - After Step 6: if Docker build/push fails
 - After Step 7: if verification fails (troubleshoot before testing)
+- After Step 10: deployment complete (Openflow attempted, reported status)
 
 ## Troubleshooting
 
@@ -586,6 +605,16 @@ See `openflow/README.md` in this repo for detailed PG architecture and schema ma
 **Geospatial functions fail**: ST_DISTANCE and ST_MAKEPOINT require geospatial support. This is enabled by default on most accounts. If not: check account parameters.
 
 **DATA_AGENT_RUN query times out**: Agent queries can take 30-90s. Use `timeout_seconds=1200` with CoCo's SQL tool.
+
+**COPY INTO from git repo fails with "Unsupported feature"**: You cannot COPY INTO directly from a git repository stage. Use two-step: `COPY FILES INTO @DATA_STAGE FROM @git_repo/...` then `COPY INTO table FROM @DATA_STAGE`.
+
+**MATCH_BY_COLUMN_NAME fails with "match_by_column_name not supported"**: Use `PARSE_HEADER=TRUE` (not `SKIP_HEADER=1`) when using `MATCH_BY_COLUMN_NAME`.
+
+**Agent not visible in Snowflake Intelligence**: Agents are NOT auto-discovered. Run: `ALTER SNOWFLAKE INTELLIGENCE SNOWFLAKE_INTELLIGENCE_OBJECT_DEFAULT ADD AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT;`
+
+**Agent spec "unrecognized field" errors**: The current CREATE AGENT format requires `tools: [{ tool_spec: { type, name, description } }]` and a separate `tool_resources:` section with `execution_environment: { type: warehouse, warehouse: ... }`. Do NOT use top-level `name`/`description` or inline `tool_type`.
+
+**Openflow step skipped**: Openflow requires: (1) enabled on account, (2) runtime created via UI, (3) PAT configured. Re-run with: `/deploy_sku_launch_product_launch deploy openflow pipelines for SKU Launch demo`
 
 ## Cleanup
 
