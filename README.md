@@ -117,14 +117,21 @@ If Openflow is enabled, show the 5 NiFi process groups streaming incremental dat
 - **Docker Desktop** installed and running (for building the React app image)
 - **Snowflake CLI** (`snow`) installed
 
-## 1-Prompt CoCo Deployment
+## 1-Step Deployment
+
+> **The recommended deployment method is via Cortex Code (CoCo).**
+
+In CoCo, simply type:
 
 ```
 deploy demo for the skill at https://github.com/sfc-gh-amgupta/new_sku_commercialization
-Also create a document of the issues as you deploy using the skill even if you resolve them.
 ```
 
+CoCo will automatically create all ~52 objects (database, schemas, tables, dynamic tables, semantic views, Cortex Search, Agent, SPCS dashboard) end-to-end with verification.
+
 ## Manual Deployment
+
+> **This section is for reference only.** The suggested deployment method is via CoCo — see [1-Step Deployment](#1-step-deployment) above.
 
 ### Step 1: Infrastructure
 ```sql
