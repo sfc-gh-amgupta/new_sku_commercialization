@@ -117,7 +117,7 @@ If Openflow is enabled, show the 5 NiFi process groups streaming incremental dat
 - **Docker Desktop** installed and running (for building the React app image)
 - **Snowflake CLI** (`snow`) installed
 
-## 1-Step Deployment
+## 1-Prompt CoCo Deployment
 
 > **The recommended deployment method is via Cortex Code (CoCo).**
 
@@ -131,7 +131,7 @@ CoCo will automatically create all ~52 objects (database, schemas, tables, dynam
 
 ## Manual Deployment
 
-> **This section is for reference only.** The suggested deployment method is via CoCo — see [1-Step Deployment](#1-step-deployment) above.
+> **This section is for reference only.** The suggested deployment method is via CoCo — see [1-Prompt CoCo Deployment](#1-prompt-coco-deployment) above.
 
 ### Step 1: Infrastructure
 ```sql
