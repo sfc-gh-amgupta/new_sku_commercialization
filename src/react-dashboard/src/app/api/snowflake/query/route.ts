@@ -21,7 +21,10 @@ function getAuthHeaders(req: Request): Record<string, string> | null {
 
 export async function POST(req: Request) {
   const { sql } = await req.json();
-  const host = process.env.SNOWFLAKE_HOST || "sfsenorthamerica-rraz-aws1.snowflakecomputing.com";
+  const host = process.env.SNOWFLAKE_HOST;
+  if (!host) {
+    return NextResponse.json({ error: "SNOWFLAKE_HOST not configured" }, { status: 500 });
+  }
 
   const authHeaders = getAuthHeaders(req);
   if (!authHeaders) {
