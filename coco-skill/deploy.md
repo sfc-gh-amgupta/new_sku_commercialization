@@ -243,10 +243,10 @@ SHOW IMAGES IN IMAGE REPOSITORY SKU_LAUNCH.INVENTORY.IMAGE_REPO;
 
 ## Step 6b: Deploy SPCS Service
 
-**IMPORTANT**: Before running 09_deploy_spcs.sql, update the `SNOWFLAKE_ACCOUNT` env var in the service spec to match the target account. Detect the account identifier:
+**IMPORTANT**: Before running 09_deploy_spcs.sql, update the `SNOWFLAKE_HOST` and `SNOWFLAKE_ACCOUNT` env vars in the service spec to match the target account. Detect the account identifier:
 
 ```sql
-SELECT CURRENT_ACCOUNT_NAME() || '-' || CURRENT_ORGANIZATION_NAME() AS account_locator;
+SELECT LOWER(CURRENT_ORGANIZATION_NAME()) || '-' || LOWER(CURRENT_ACCOUNT_NAME()) || '.snowflakecomputing.com' AS snowflake_host;
 ```
 
 Also update the network rule to use the target account's host:
@@ -579,7 +579,7 @@ See `openflow/README.md` in this repo for detailed PG architecture and schema ma
 
 **SPCS not picking up new Docker image**: `ALTER SERVICE ... SUSPEND` / `RESUME` does NOT pull a new image. You must `DROP SERVICE` and `CREATE SERVICE` again. The ingress URL will change — always query `SHOW ENDPOINTS`.
 
-**SNOWFLAKE_HOST env var**: Do NOT set SNOWFLAKE_HOST explicitly in the service spec. Let Snowflake auto-inject the internal hostname. Setting it manually forces traffic over the internet where the SPCS OAuth token is invalid.
+**SNOWFLAKE_HOST env var**: MUST be set in the service spec for the SI "Launch in Cowork" button to work correctly. Format: `<org>-<account>.snowflakecomputing.com` (all lowercase, hyphens between org and account parts). The SPCS OAuth token authenticates against this host for API calls.
 
 **Network rule host value**: Must match your account exactly. Use `SELECT CURRENT_ORGANIZATION_NAME() || '-' || CURRENT_ACCOUNT_NAME() || '.snowflakecomputing.com' AS host;` to determine the correct value.
 

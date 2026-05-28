@@ -23,6 +23,7 @@ spec:
     - name: app
       image: /SKU_LAUNCH/INVENTORY/IMAGE_REPO/sku-launch-dashboard:latest
       env:
+        SNOWFLAKE_HOST: "SFSENORTHAMERICA-RRAZ-AWS1.snowflakecomputing.com"
         SNOWFLAKE_ACCOUNT: "SFSENORTHAMERICA-RRAZ_AWS1"
         SNOWFLAKE_DATABASE: "SKU_LAUNCH"
         SNOWFLAKE_SCHEMA: "INVENTORY"
