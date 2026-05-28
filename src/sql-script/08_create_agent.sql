@@ -2,7 +2,9 @@
 -- Creates the Product Launch Agent in Snowflake Intelligence
 -- NOTE: If CREATE AGENT DDL is not available on your account, create via Snowflake Intelligence UI
 
-CREATE AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT
+USE ROLE ACCOUNTADMIN;
+
+CREATE OR REPLACE AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT
 FROM SPECIFICATION $$
 name: Product Launch Agent
 description: Analyzes new SKU launch performance across sales, inventory, distribution, and consumer sentiment
@@ -35,7 +37,6 @@ tools:
 $$;
 
 -- Grant access to the agent for the demo role and public
-USE ROLE ACCOUNTADMIN;
 GRANT USAGE ON AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT TO ROLE SKU_LAUNCH_ROLE;
 GRANT USAGE ON AGENT SNOWFLAKE_INTELLIGENCE.AGENTS.PRODUCT_LAUNCH_AGENT TO ROLE PUBLIC;
 USE ROLE SKU_LAUNCH_ROLE;
